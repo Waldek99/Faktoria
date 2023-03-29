@@ -1,8 +1,10 @@
-
+"use strict";
 function GlobalAnimations() {
 
 	function RollWall() {
+
 		const small_planks = document.getElementsByClassName("all-small-planks");
+
 		for (let i = 0; i < small_planks.length; i++) {
 			small_planks[i].addEventListener("click", () => {
 				document.getElementById("side-center").classList.add("side-center-ani");
@@ -19,7 +21,13 @@ function GlobalAnimations() {
 	// The CSS Animations specification doesn't offer a way to run an animation again.
 	// There's no magic resetAnimation() method on elements, and you can't even just set the element's animation-play-state to "running" again. 
 	// Instead, you have to use clever tricks to get a stopped animation to replay.
-	function RollTape_00 (click_obj, ani_obj, class_of_ani, class_on_ani, class_of_ani_buttons, class_on_ani_buttons) {
+	function RollTape_00 (click_obj, ani_obj) {
+
+		let class_of_ani = "all-no-ani-buttons";
+		let class_on_ani = "tape-A-ani";
+		let class_of_ani_buttons = "tape-A-00-buttons";
+		let class_on_ani_buttons = "tape-A-00-buttons-ani";
+
 		for (let i = 0; i < click_obj.length; i++) {
 			click_obj[i].addEventListener("click", () => {
 				if (click_obj[i].id === "Button00Left" || click_obj[i].id === "Button01Left" || click_obj[i].querySelectorAll("#PlankSmall")) {
@@ -74,9 +82,11 @@ function GlobalAnimations() {
 		}
 	}
 
-	function AniInProgress_00 () {
-		tape_A_ani = document.querySelectorAll(".all-no-ani-buttons,#PlankSmall");
-		click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
+	function AniInProgress_00() {
+
+		let tape_A_ani = document.querySelectorAll(".all-no-ani-buttons,#PlankSmall");
+		let click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
+
 		for (let i = 0; i < tape_A_ani.length; i++) {
 			tape_A_ani[i].addEventListener('animationstart', (event) => {
 				for (let i = 0; i < click_obj_blockade.length; i++) {
@@ -112,8 +122,10 @@ function GlobalAnimations() {
 		}
 	}
 
-	function BoxesMoveLeftAni_01() {
-		slides_div = document.getElementsByClassName("slides");
+	function BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight) {
+
+		let slides_div = document.getElementsByClassName("slides");
+
 		for (let j = 0; j < slides_class_00.length; j++) {
 			if (slides_class_00[j].includes("slides-right")) {
 				slides_class_00[j] = slides_class_00[j].replace("slides-right", "slides-left");
@@ -176,8 +188,10 @@ function GlobalAnimations() {
 		}
 
 	}
-	function BoxesMoveRightAni_01() {
-		slides_div = document.getElementsByClassName("slides");
+	function BoxesMoveRightAni_01(slides_class_00, MoveItemLeft, MoveItemRight) {
+
+		let slides_div = document.getElementsByClassName("slides");
+
 		for (let j = 0; j < slides_class_00.length; j++) {
 			if (slides_class_00[j].includes("slides-left")) {
 				slides_class_00[j] = slides_class_00[j].replace("slides-left", "slides-right");
@@ -241,65 +255,166 @@ function GlobalAnimations() {
 
 	}
 
-	function BoxesAni_00 () {
-		MoveItemLeft = (array, to, from) => {
-			item = array[from];
+	function BoxesAni_00() {
+
+		let MoveItemLeft = (array, to, from) => {
+			let item = array[from];
 			array.splice(from, 1);
 			array.splice(to, 0, item);
 			return array;
 		}
-		MoveItemRight = (array, to, from) => {
-			item = array[from];
+
+		let MoveItemRight = (array, to, from) => {
+			let item = array[from];
 			array.splice(from, 1);
 			array.splice(to, 0, item);
 			return array;
 		}
-		click_obj = document.querySelectorAll(".all-small-planks,.tape-A-00-buttons");
-		slides_class_00 = [
+
+		let click_obj = document.querySelectorAll(".all-small-planks,.tape-A-00-buttons");
+		let slides_class_00 = [
 			"slides slide00",
 			"slides slide01",
 			"slides slide02",
 			"slides slide03",
 			];
-		for (let i = 0; i < click_obj.length; i++) {
+
+		for (let i = 0; i < click_obj.length; i++) {		
 			click_obj[i].addEventListener("click", () => {
 				if (click_obj[i].classList.contains("tape-A-00-buttons")) {
 					if (click_obj[i].id === "Button00Left" || click_obj[i].id === "Button01Left") {
-						BoxesMoveLeftAni_01();
+						BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 					if (click_obj[i].id === "Button00Right" || click_obj[i].id === "Button01Right") {
-						BoxesMoveRightAni_01();
+						BoxesMoveRightAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 				}
 				if (click_obj[i].classList.contains("all-small-planks")) {
 					if (click_obj[i].id === "PlankSmallGrafik") {
-						BoxesMoveLeftAni_01();
+						BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 					if (click_obj[i].id === "PlankSmallAnimation") {
-						BoxesMoveLeftAni_01();
+						BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 					if (click_obj[i].id === "PlankSmallMovie") {
-						BoxesMoveLeftAni_01();
+						BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 					if (click_obj[i].id === "PlankSmallMusic") {
-						BoxesMoveLeftAni_01();
+						BoxesMoveLeftAni_01(slides_class_00, MoveItemLeft, MoveItemRight);
 					}
 				}
 			});
+			click_obj[i].addEventListener("click", OpenBox02, false);
 		}
 		
 	}
 
-	function ScrollToContact00 () {
-		contact00 = document.querySelectorAll(".contact-set,.contact-group");
-		for (let i = 0; i < contact00.length; i++) {
-			contact00[i].addEventListener ("click", () => {
+	function ContactBox00() {
+
+		let roll00 = document.querySelectorAll(".contact-set,.contact-group");
+
+		for (let i = 0; i < roll00.length; i++) {
+			roll00[i].addEventListener("click", () => {
 				window.scrollTo({
 					left: 0,
-					top: document.getElementById("gutter-down").scrollHeight,
+					top: document.getElementById("side-center").scrollHeight,
 					behavior: "smooth"
 				});
 			});
+		}
+
+		let mail00 = document.getElementById("AllMailBox");
+		mail00.addEventListener("click", () => {
+			parent.location="mailto:kontakt@faktoria.ct8.pl";
+		});
+	}
+
+	// function OpenBox00 run from function BoxesAni_00
+	function OpenBox02() {
+
+		function InsideBox00() {
+
+			let openbox00 = document.createElement("div");
+			let closebox00 = document.createElement("div");
+
+			openbox00.className = "openbox00";
+			closebox00.className = "closebox00";
+
+			let height00 = screen.availHeight + "px";
+			openbox00.style.height = height00;
+			document.body.appendChild(openbox00);
+
+			let inside00 = event.currentTarget;
+			let clone00;
+
+			if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
+				if (inside00.classList.contains("left00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 left00";
+					openbox00.appendChild(clone00);
+				}
+				if (inside00.classList.contains("center00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 center00";
+					openbox00.appendChild(clone00);
+				}
+				if (inside00.classList.contains("right00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 right00";
+					openbox00.appendChild(clone00);
+				}
+			}
+			if (inside00.closest(".slide02") !== null || inside00.closest(".slide03") !== null ) {
+				if (inside00.classList.contains("left00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 left00";
+					openbox00.appendChild(clone00);
+				}
+				if (inside00.classList.contains("center00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 center00";
+					openbox00.appendChild(clone00);
+				}
+				if (inside00.classList.contains("right00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 right00";
+					openbox00.appendChild(clone00);
+				}
+			}
+
+			openbox00.appendChild(closebox00);
+			closebox00.addEventListener("click", () => {
+				if (openbox00.parentNode) {
+					openbox00.parentNode.removeChild(openbox00);
+				}
+			});
+		}
+
+		let allBoxes00 = document.getElementById("AllBoxes");
+		let thumbnail00;
+
+		if (allBoxes00.children.length == 2 && !allBoxes00.classList.contains("end")) {
+			thumbnail00 = allBoxes00.children[0].getElementsByTagName("img");
+			for (let x = 0; x < thumbnail00.length; x++) {
+				thumbnail00[x].parentNode.addEventListener("click", InsideBox00, false);
+			}
+		}
+		if (allBoxes00.children.length == 3 && !allBoxes00.classList.contains("end")) {
+			thumbnail00 = allBoxes00.children[1].getElementsByTagName("img");
+			for (let x = 0; x < thumbnail00.length; x++) {
+				thumbnail00[x].parentNode.addEventListener("click", InsideBox00, false);
+			}
+		}
+		if (allBoxes00.children.length == 4 && !allBoxes00.classList.contains("end")) {
+			allBoxes00.classList.add("end");
+			thumbnail00 = allBoxes00.children[2].getElementsByTagName("img");
+			for (let x = 0; x < thumbnail00.length; x++) {
+				thumbnail00[x].parentNode.addEventListener("click", InsideBox00, false);
+			}
+			thumbnail00 = allBoxes00.children[3].getElementsByTagName("img");
+			for (let x = 0; x < thumbnail00.length; x++) {
+				thumbnail00[x].parentNode.addEventListener("click", InsideBox00, false);
+			}
 		}
 	}
 
@@ -310,14 +425,9 @@ function GlobalAnimations() {
 	RollTape_00 (
 		document.querySelectorAll(".tape-A-00-buttons,.all-small-planks"),	// click_obj
 		document.getElementsByClassName("all-no-ani-buttons"),				// ani_obj
-		class_of_ani = "all-no-ani-buttons",								// class_of_ani
-		class_on_ani = "tape-A-ani", 										// class_on_ani
-		class_of_ani_buttons = "tape-A-00-buttons",							// class_of_ani_buttons
-		class_on_ani_buttons = "tape-A-00-buttons-ani",						// class_0n_ani_buttons
 	);
 	AniInProgress_00();
-	ScrollToContact00();
-
+	ContactBox00();
 
 }
 

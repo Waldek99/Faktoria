@@ -16,6 +16,7 @@ body.hull-ani {
 
 
 
+
 /* planksAB-banner.svg animations */
 
 
@@ -34,9 +35,9 @@ body.hull-ani {
 	animation: side-center-ani-00 5s forwards;
 }
 @keyframes side-center-ani-00 {
-	0% {top: -1220px; height: 1920px;}
-	99% {top: 0px; height: 1920px;}
-	100% {top: 0px; height: 1450px;}
+	0% {top: -800px; height: 1160px;} /* 0% {top: -165%; height: 1920px;} */
+	99% {top: 0px; height: 1160px;}
+	100% {top: 0px; height: 800px;}
 }
 
 
@@ -44,9 +45,9 @@ body.hull-ani {
 	animation: planksAB-banner-ani-00 5s forwards;
 }
 @keyframes planksAB-banner-ani-00 {
-	0% {transform: translate(0,-290px) scale(0.97);}
-	50% {transform: translate(0, -260px) scale(0.97);}
-	100% {transform: translate(0, -290px) scale(0.97);}
+	0% {transform: translate(0, -170px) scale(0.57);}
+	50% {transform: translate(0, -140px) scale(0.57);}
+	100% {transform: translate(0, -170px) scale(0.57);}
 
 }
 
@@ -60,7 +61,7 @@ body.hull-ani {
 }
 @keyframes tape-A-left-ani-00 {
 	0% {transform: translate(0px, 0px);}
-	100% {transform: translate(-433.2px, 0px);} /* 407.2px */
+	100% {transform: translate(-407.2px, 0px);} /* 326.2px */
 }
 
 #plate-A-00-down-all.tape-A-ani-left {
@@ -71,7 +72,7 @@ body.hull-ani {
 }
 @keyframes tape-A-left-ani-01 {
 	0% {transform: translate(0px, 0px);}
-	100% {transform: translate(433.2px, 0px);} /* 430.8px */
+	100% {transform: translate(430.8px, 0px);} /* 349.8px */
 }
 
 .all-no-ani-buttons.tape-A-ani-left {
@@ -89,9 +90,9 @@ body.hull-ani {
 	animation: all-lines-ani-00 5s forwards;
 }
 @keyframes all-lines-ani-00 {
-	0% {bottom: 750px;}
-	99% {bottom: 750px;}
-	100% {bottom: 280px;}
+	0% {bottom: 470.5px;}
+	99% {bottom: 470.5px;}
+	100% {bottom: 110px;}
 }
 
 /* tape-A.svg animations buttons */
@@ -124,7 +125,7 @@ body.hull-ani {
 	animation: side-bottom-ani-00 5s forwards;
 }
 @keyframes side-bottom-ani-00 {
-	100% {transform: translate(0, 850px);}
+	100% {transform: translate(0, 440px);}
 }
 
 
@@ -132,7 +133,7 @@ body.hull-ani {
 	animation: all-gutters-down-ani-00 5s forwards;
 }
 @keyframes all-gutters-down-ani-00 {
-	100% {top: 935px}
+	100% {top: 496px}
 }
 
 
@@ -150,8 +151,8 @@ body.hull-ani {
 }
 
 #banner {
-	width: 1402.52px;
-	height: 420px;
+	width: 824.167px;
+	height: 230px;
 	margin-left: 50%;
 	transform: translate(-51%, 0);
 }
@@ -159,7 +160,8 @@ body.hull-ani {
 #planksAB-banner {
 	position: relative;
 	transform-origin: 0 0;
-	transform: translate(0, -290px) scale(0.97);
+	transform: translate(0, -170px) scale(0.57);
+
 
 }
 
@@ -169,23 +171,26 @@ body.hull-ani {
 
 #side-center {
 	background-image: url("../img/wall-0.svg");
+	background-size: 25%;
 	position: absolute;
 	width: 100%;
-	height: 1920px;
+	height: 1160px;
 	overflow: hidden;
-	top: -1220px; /* -165% */
+	top: -800px;
 }
 
 #trough-left {
 	position: absolute;
 	left: 0.6%;
-	top: -45px;
+	top: -155px;
+	transform: scale(0.85);
 }
 
 #trough-right {
 	position: absolute;
 	right: 0.6%;
-	top: -45px;
+	top: -155px;
+	transform: scale(0.85);
 }
 
 .contact-group {
@@ -197,21 +202,21 @@ body.hull-ani {
 	position: absolute;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
-	bottom: 750px;
+	bottom: 470.5px;
 }
 
 .lines {
 	position: relative;
-	height: 455px;
+	height: 240px;
 }
 
 #AllBoxes {
 	position: absolute;
 	display: flex;
 	justify-content: space-around;
-	top: 430px;
+	top: 200px;
 	left: 0;
-	width: 100%; /* 1518px == 100% */
+	width: 100%;
 }
 
 .slides {
@@ -226,6 +231,7 @@ body.hull-ani {
 	justify-content: space-around;
 }
 .Boxes {
+	transform: scale(0.6);
 	position: absolute;
 }
 
@@ -257,14 +263,16 @@ body.hull-ani {
 	pointer-events: none;
 }
 .miniatures00 {
+	scale: 0.95;
 	position: absolute;
 	background-color: white;
 	cursor: pointer;
-	width: 266px;	/* 266px */
-	height: 120px; /* 120px */
-	transform: translate(25px, 75px); /* (25px, 75px) */
+	width: 166px;
+	height: 75.5px;
+	transform: translate(16px, 90px);
 }
 .slides-images-00 {
+	scale: 0.95;
 	height: 100%;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
@@ -305,36 +313,36 @@ body.hull-ani {
 	animation: boxes-ani-R02 15s reverse forwards;
 }
 @keyframes boxes-ani-R02 {
-	0% {transform: translate(-100%, 455px);}
-	100% {transform: translate(0%, 455px);}
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
 }
 .slides.slides-left.slide02 {
 	animation: boxes-ani-L02 15s forwards;
 }
 @keyframes boxes-ani-L02 {
-	0% {transform: translate(-100%, 455px);}
-	100% {transform: translate(0%, 455px);}
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
 }
 .slides.slides-right.slide03 {
 	animation: boxes-ani-R03 15s reverse forwards;
 }
 @keyframes boxes-ani-R03 {
-	0% {transform: translate(0%, 455px);}
-	100% {transform: translate(100%, 455px);}
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
 }
 .slides.slides-left.slide03 {
 	animation: boxes-ani-L03 15s forwards;
 }
 @keyframes boxes-ani-L03 {
-	0% {transform: translate(0%, 455px);}
-	100% {transform: translate(100%, 455px);}
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
 }
 /* flipped items for classes slide02, slide03 */
 .slide02 .Boxes {
-	transform: scaleX(-1);
+	transform: scale(-0.6, 0.6);
 }
 .slide03 .Boxes {
-	transform: scaleX(-1);
+	transform: scale(-0.6, 0.6);
 }
 .slide02 .Boxes #Category00Text {
 	transform: translate(54.5%, 1%) scaleX(-1);
@@ -355,42 +363,42 @@ body.hull-ani {
 	transform: translate(101.5%, -9%) scaleX(-1);
 }
 .slide02 .miniatures00 {
-	transform: translate(-26px, 75px);
+	transform: translate(-16px, 90px);
 }
 .slide03 .miniatures00 {
-	transform: translate(-26px, 75px);
+	transform: translate(-16px, 90px);
 }
 
 
 .grips {
 	position: absolute;
 	margin-left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, 0) scale(0.65);
 	bottom: 0;
 }
 
 .grips#grip-A {
-	top: 535px;
+	top: 281px;
 	left: -30px;
 }
 
 .grips#grip-B {
-	top: 990px;
+	top: 521px;
 	left: 30px;
 }
 
 #roll-tape-A {
-	left: -30px; /* -30px */
+	left: -25px;
 }
 
 #roll-tape-B {
-	left: 20px;	 /* 20px */
+	left: 18px;
 }
 
 .tapes {
 	position: absolute;
 	margin-left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, 0) scale(0.75);
 	bottom: 0;
 }
 
@@ -398,10 +406,11 @@ body.hull-ani {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
+
 }
 
 #street {
-	transform: translate(-50%, 0px) scale(0.98);
+	transform: translate(-50%, -27px) scale(0.55);
 	margin-left: 50%;
 }
 
@@ -413,16 +422,17 @@ body.hull-ani {
 
 .all-gutters-down {
 	position: absolute;
-	top: 85px;
+	top: 55px;
 }
 
 #gutter-down-left {
-	left: 1%;
+	left: 0.6%;
+	transform: scale(0.73);
 }
 
 #gutter-down-right {
-	transform: scaleX(-1);
-	right: 1%;
+	transform: scale(-0.73, 0.73);
+	right: 0.6%;
 }
 
 /* side-bottom */
@@ -431,56 +441,5 @@ body.hull-ani {
 	cursor: pointer;
 }
 
-/* openbox */
 
-.openbox00 {
-	display: flex;
-	width: 100%;
-	background-color: green;
 
-}
-.closebox00 {
-	position: relative;
-	background-color: hotpink;
-	cursor: pointer;
-	top: 0;
-	right: 0;
-	width: 60px;
-	height: 60px;
-}
-
-.miniatures01 {
-	background-color: black;
-	cursor: initial;
-
-}
-.miniatures01.left00 {
-	transform: translate(145px,85px);
-	animation: open-box-ani-00 15s forwards;
-}
-.miniatures01.center00 {
-	transform: translate(651.5px,85px);
-	animation: open-box-ani-00 15s forwards;
-}
-.miniatures01.right00 {
-	transform: translate(1158px,85px);
-	animation: open-box-ani-00 15s forwards;
-}
-.miniatures02 {
-	background-color: black;
-	cursor: initial;
-}
-.miniatures02.left00 {
-	transform: translate(94.1px,540px);
-	animation: open-box-ani-00 15s forwards;
-}
-.miniatures02.center00 {
-	transform: translate(600.6px,540px);
-	animation: open-box-ani-00 15s forwards;
-}
-.miniatures02.right00 {
-	transform: translate(1107.1px,540px);
-	animation: open-box-ani-00 15s forwards;
-}
-@keyframes open-box-ani-00 {
-	100% {top: 0 left: 0; width: 100%; height: 100%; transform: translate(0,0);}
