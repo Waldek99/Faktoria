@@ -1,0 +1,445 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #636363;
+	margin: 0;
+	overflow: hidden;
+}
+body.hull-ani {
+	animation: hull-ani-00 5s 3.5s forwards;
+}
+@keyframes hull-ani-00 {
+	100% {overflow-y: auto;}
+}
+
+
+
+
+/* planksAB-banner.svg animations */
+
+
+#planksAB:hover #text-title-shadow {
+	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
+}
+.all-small-planks:hover .all-small-planks-text-shadows {
+	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
+}
+@keyframes text-an1-01 {
+	100% {opacity: 1;}
+}
+
+
+#side-center.side-center-ani {
+	animation: side-center-ani-00 5s forwards;
+}
+@keyframes side-center-ani-00 {
+	0% {top: -800px; height: 1160px;} /* 0% {top: -165%; height: 1920px;} */
+	99% {top: 0px; height: 1160px;}
+	100% {top: 0px; height: 800px;}
+}
+
+
+#planksAB-banner.planksAB-banner-ani {
+	animation: planksAB-banner-ani-00 5s forwards;
+}
+@keyframes planksAB-banner-ani-00 {
+	0% {transform: translate(0, -170px) scale(0.57);}
+	50% {transform: translate(0, -140px) scale(0.57);}
+	100% {transform: translate(0, -170px) scale(0.57);}
+
+}
+
+/* tape-A.svg animations */
+
+#plate-A-00-up-all.tape-A-ani-left {
+	animation: tape-A-left-ani-00 15s none;
+}
+#plate-A-00-up-all.tape-A-ani-right {
+	animation: tape-A-left-ani-00 15s none reverse;
+}
+@keyframes tape-A-left-ani-00 {
+	0% {transform: translate(0px, 0px);}
+	100% {transform: translate(-407.2px, 0px);} /* 326.2px */
+}
+
+#plate-A-00-down-all.tape-A-ani-left {
+	animation: tape-A-left-ani-01 15s none;
+}
+#plate-A-00-down-all.tape-A-ani-right {
+	animation: tape-A-left-ani-01 15s none reverse;
+}
+@keyframes tape-A-left-ani-01 {
+	0% {transform: translate(0px, 0px);}
+	100% {transform: translate(430.8px, 0px);} /* 349.8px */
+}
+
+.all-no-ani-buttons.tape-A-ani-left {
+	animation: tape-A-left-ani-02 15s none;
+}
+.all-no-ani-buttons.tape-A-ani-right {
+	animation: tape-A-left-ani-02 15s none reverse;
+}
+@keyframes tape-A-left-ani-02 {
+	0% {transform: rotate(0deg); transform-box: fill-box; transform-origin: 50% 50%;}
+	100% {transform: rotate(-720deg); transform-box: fill-box; transform-origin: 50% 50%;}
+}
+
+#all-lines.all-lines-ani {
+	animation: all-lines-ani-00 5s forwards;
+}
+@keyframes all-lines-ani-00 {
+	0% {bottom: 470.5px;}
+	99% {bottom: 470.5px;}
+	100% {bottom: 110px;}
+}
+
+/* tape-A.svg animations buttons */
+
+#Button00Left.tape-A-00-buttons-ani-left {
+	animation: tape-A-left-ani-03 15s none;
+}
+#Button01Left.tape-A-00-buttons-ani-left {
+	animation: tape-A-left-ani-03 15s none;
+}
+#Button00Right.tape-A-00-buttons-ani-right {
+	animation: tape-A-left-ani-03 15s none;
+}
+#Button01Right.tape-A-00-buttons-ani-right {
+	animation: tape-A-left-ani-03 15s none;
+}
+@keyframes tape-A-left-ani-03 {
+	0% {transform: translate(0px, 0px);}
+	50% {transform: translate(-1px,-1px);}
+	100% {transform: translate(0px, 0px);}
+}
+
+.tape-A-00-buttons {
+	cursor: pointer;
+}
+
+/* side-bottom animations */
+
+#side-bottom.side-bottom-ani {
+	animation: side-bottom-ani-00 5s forwards;
+}
+@keyframes side-bottom-ani-00 {
+	100% {transform: translate(0, 440px);}
+}
+
+
+.all-gutters-down.all-gutters-down-ani {
+	animation: all-gutters-down-ani-00 5s forwards;
+}
+@keyframes all-gutters-down-ani-00 {
+	100% {top: 496px}
+}
+
+
+/* index.html */
+
+#side-top {
+	position: relative;
+	width: 90%;
+	margin-left: 50%;
+	transform: translate(-50%, 0);
+}
+
+#side-banner {
+	position: relative;
+}
+
+#banner {
+	width: 824.167px;
+	height: 230px;
+	margin-left: 50%;
+	transform: translate(-51%, 0);
+}
+
+#planksAB-banner {
+	position: relative;
+	transform-origin: 0 0;
+	transform: translate(0, -170px) scale(0.57);
+
+
+}
+
+.all-small-planks {
+	cursor: pointer;
+}
+
+#side-center {
+	background-image: url("../img/wall-0.svg");
+	background-size: 25%;
+	position: absolute;
+	width: 100%;
+	height: 1160px;
+	overflow: hidden;
+	top: -800px;
+}
+
+#trough-left {
+	position: absolute;
+	left: 0.6%;
+	top: -155px;
+	transform: scale(0.85);
+}
+
+#trough-right {
+	position: absolute;
+	right: 0.6%;
+	top: -155px;
+	transform: scale(0.85);
+}
+
+.contact-group {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+#all-lines {
+	position: absolute;
+	margin-left: 50%;
+	transform: translate(-50%, 0);
+	bottom: 470.5px;
+}
+
+.lines {
+	position: relative;
+	height: 240px;
+}
+
+#AllBoxes {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	top: 200px;
+	left: 0;
+	width: 100%;
+}
+
+.slides {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	width: 100%; /* 1225px */
+	transform: translate(100%, 0);
+}
+.one-of-three {
+	display: flex;
+	justify-content: space-around;
+}
+.Boxes {
+	transform: scale(0.6);
+	position: absolute;
+}
+
+#Tab00Category:hover  {
+	fill: white;
+	cursor: pointer;
+}
+#Tab01Descrip:hover {
+	fill: white;
+	cursor: pointer;
+}
+#Tab02Code:hover {
+	fill: white;
+	cursor: pointer;
+}
+#Tab00Category:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+#Tab01Descrip:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+#Tab02Code:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+.textboxes00,.flip00 {
+	pointer-events: none;
+}
+.miniatures00 {
+	scale: 0.95;
+	position: absolute;
+	background-color: white;
+	cursor: pointer;
+	width: 166px;
+	height: 75.5px;
+	transform: translate(16px, 90px);
+}
+.slides-images-00 {
+	scale: 0.95;
+	height: 100%;
+	margin-left: 50%;
+	transform: translate(-50%, 0);
+
+}
+
+/* boxes animations */
+
+.slides.slides-right.slide00 {
+	animation: boxes-ani-R00 15s reverse forwards;
+}
+@keyframes boxes-ani-R00 {
+	0% {transform: translate(100%, 0);}
+	100% {transform: translate(0%, 0);}
+}
+.slides.slides-left.slide00 {
+	animation: boxes-ani-L00 15s forwards;
+}
+@keyframes boxes-ani-L00 {
+	0% {transform: translate(100%, 0);}
+	100% {transform: translate(0%, 0);}
+}
+.slides.slides-right.slide01 {
+	animation: boxes-ani-R01 15s reverse forwards;
+}
+@keyframes boxes-ani-R01 {
+	0% {transform: translate(0%, 0);}
+	100% {transform: translate(-100%, 0);}
+}
+.slides.slides-left.slide01 {
+	animation: boxes-ani-L01 15s forwards;
+}
+@keyframes boxes-ani-L01 {
+	0% {transform: translate(0%, 0);}
+	100% {transform: translate(-100%, 0);}
+}
+.slides.slides-right.slide02 {
+	animation: boxes-ani-R02 15s reverse forwards;
+}
+@keyframes boxes-ani-R02 {
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
+}
+.slides.slides-left.slide02 {
+	animation: boxes-ani-L02 15s forwards;
+}
+@keyframes boxes-ani-L02 {
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
+}
+.slides.slides-right.slide03 {
+	animation: boxes-ani-R03 15s reverse forwards;
+}
+@keyframes boxes-ani-R03 {
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
+}
+.slides.slides-left.slide03 {
+	animation: boxes-ani-L03 15s forwards;
+}
+@keyframes boxes-ani-L03 {
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
+}
+/* flipped items for classes slide02, slide03 */
+.slide02 .Boxes {
+	transform: scale(-0.6, 0.6);
+}
+.slide03 .Boxes {
+	transform: scale(-0.6, 0.6);
+}
+.slide02 .Boxes #Category00Text {
+	transform: translate(54.5%, 1%) scaleX(-1);
+}
+.slide03 .Boxes #Category00Text {
+	transform: translate(54.5%, 1%) scaleX(-1);
+}
+.slide02 .Boxes #Descrip00Text {
+	transform: translate(79%, -4.5%) scaleX(-1);
+}
+.slide03 .Boxes #Descrip00Text {
+	transform: translate(79%, -4.5%) scaleX(-1);
+}
+.slide02 .Boxes #Code00Text {
+	transform: translate(101.5%, -9%) scaleX(-1);
+}
+.slide03 .Boxes #Code00Text {
+	transform: translate(101.5%, -9%) scaleX(-1);
+}
+.slide02 .miniatures00 {
+	transform: translate(-16px, 90px);
+}
+.slide03 .miniatures00 {
+	transform: translate(-16px, 90px);
+}
+
+
+.grips {
+	position: absolute;
+	margin-left: 50%;
+	transform: translate(-50%, 0) scale(0.65);
+	bottom: 0;
+}
+
+.grips#grip-A {
+	top: 281px;
+	left: -30px;
+}
+
+.grips#grip-B {
+	top: 521px;
+	left: 30px;
+}
+
+#roll-tape-A {
+	left: -25px;
+}
+
+#roll-tape-B {
+	left: 18px;
+}
+
+.tapes {
+	position: absolute;
+	margin-left: 50%;
+	transform: translate(-50%, 0) scale(0.75);
+	bottom: 0;
+}
+
+#side-bottom {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+
+}
+
+#street {
+	transform: translate(-50%, -27px) scale(0.55);
+	margin-left: 50%;
+}
+
+#gutter-down {
+	position: absolute;
+	width: 100%;
+}
+
+
+.all-gutters-down {
+	position: absolute;
+	top: 55px;
+}
+
+#gutter-down-left {
+	left: 0.6%;
+	transform: scale(0.73);
+}
+
+#gutter-down-right {
+	transform: scale(-0.73, 0.73);
+	right: 0.6%;
+}
+
+/* side-bottom */
+
+#AllMailBox  {
+	cursor: pointer;
+}
+
+
+
