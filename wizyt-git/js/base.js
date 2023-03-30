@@ -329,66 +329,8 @@ function GlobalAnimations() {
 		});
 	}
 
-	// function OpenBox00 run from function BoxesAni_00
+	// function OpenBox02 run from function BoxesAni_00
 	function OpenBox02() {
-
-		function InsideBox00() {
-
-			let openbox00 = document.createElement("div");
-			let closebox00 = document.createElement("div");
-
-			openbox00.className = "openbox00";
-			closebox00.className = "closebox00";
-
-			let height00 = screen.availHeight + "px";
-			openbox00.style.height = height00;
-			document.body.appendChild(openbox00);
-
-			let inside00 = event.currentTarget;
-			let clone00;
-
-			if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
-				if (inside00.classList.contains("left00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures01 left00";
-					openbox00.appendChild(clone00);
-				}
-				if (inside00.classList.contains("center00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures01 center00";
-					openbox00.appendChild(clone00);
-				}
-				if (inside00.classList.contains("right00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures01 right00";
-					openbox00.appendChild(clone00);
-				}
-			}
-			if (inside00.closest(".slide02") !== null || inside00.closest(".slide03") !== null ) {
-				if (inside00.classList.contains("left00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures02 left00";
-					openbox00.appendChild(clone00);
-				}
-				if (inside00.classList.contains("center00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures02 center00";
-					openbox00.appendChild(clone00);
-				}
-				if (inside00.classList.contains("right00")) {
-					clone00 = inside00.cloneNode(true);
-					clone00.className = "miniatures00 miniatures02 right00";
-					openbox00.appendChild(clone00);
-				}
-			}
-
-			openbox00.appendChild(closebox00);
-			closebox00.addEventListener("click", () => {
-				if (openbox00.parentNode) {
-					openbox00.parentNode.removeChild(openbox00);
-				}
-			});
-		}
 
 		let allBoxes00 = document.getElementById("AllBoxes");
 		let thumbnail00;
@@ -416,6 +358,76 @@ function GlobalAnimations() {
 				thumbnail00[x].parentNode.addEventListener("click", InsideBox00, false);
 			}
 		}
+	}
+
+	// function InsideBox00 run from function OpenBox02
+	function InsideBox00() {
+
+		let openbox00 = document.createElement("div");
+		let openbox01 = document.createElement("div");
+		let closebox00 = document.createElement("div");
+
+		openbox00.className = "openbox00";
+		openbox01.className = "openbox01";
+		closebox00.className = "closebox00";
+
+		let height00 = window.innerHeight + "px";
+		openbox00.style.height = height00;
+		openbox00.appendChild(openbox01);
+		document.body.appendChild(openbox00);
+		document.getElementById("hull").className = " ";
+
+		openbox00.scrollIntoView({
+			behavior: "smooth"
+		});
+
+		
+
+		let inside00 = event.currentTarget;
+		let clone00;
+
+		if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
+			if (inside00.classList.contains("left00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures01 left00";
+				openbox01.appendChild(clone00);
+			}
+			if (inside00.classList.contains("center00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures01 center00";
+				openbox01.appendChild(clone00);
+			}
+			if (inside00.classList.contains("right00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures01 right00";
+				openbox01.appendChild(clone00);
+			}
+		}
+		if (inside00.closest(".slide02") !== null || inside00.closest(".slide03") !== null ) {
+			if (inside00.classList.contains("left00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures02 left00";
+				openbox01.appendChild(clone00);
+			}
+			if (inside00.classList.contains("center00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures02 center00";
+				openbox01.appendChild(clone00);
+			}
+			if (inside00.classList.contains("right00")) {
+				clone00 = inside00.cloneNode(true);
+				clone00.className = "miniatures00 miniatures02 right00";
+				openbox01.appendChild(clone00);
+			}
+		}
+
+		openbox00.appendChild(closebox00);
+		closebox00.addEventListener("click", () => {
+			if (openbox00.parentNode) {
+				openbox00.parentNode.removeChild(openbox00);
+				document.getElementById("hull").classList.add("hull-no-ani");
+			}
+		});
 	}
 
 	// planksAB-banner animations
