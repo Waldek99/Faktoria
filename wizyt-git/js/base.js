@@ -6,14 +6,21 @@ function GlobalAnimations() {
 		const small_planks = document.getElementsByClassName("all-small-planks");
 
 		for (let i = 0; i < small_planks.length; i++) {
+
 			small_planks[i].addEventListener("click", () => {
 				document.getElementById("side-center").classList.add("side-center-ani");
 				document.getElementById("side-bottom").classList.add("side-bottom-ani");
 				document.getElementById("all-lines").classList.add("all-lines-ani");
-				document.getElementById("planksAB-banner").classList.add("planksAB-banner-ani");
+				document.getElementById("banner").classList.add("banner-ani");
 				document.getElementById("hull").classList.add("hull-ani");
 				document.getElementById("gutter-down-left").classList.add("all-gutters-down-ani");
-				document.getElementById("gutter-down-right").classList.add("all-gutters-down-ani");				
+				document.getElementById("gutter-down-right").classList.add("all-gutters-down-ani");
+
+				if ("ontouchstart" in document.documentElement)
+				{
+				  let root = document.getElementsByTagName( 'html' )[0];
+				  root.setAttribute( 'class', 'mobile00' );
+				}		
 			});
 		}
 	}
@@ -377,6 +384,12 @@ function GlobalAnimations() {
 		document.body.appendChild(openbox00);
 		document.getElementById("hull").className = " ";
 
+		if ("ontouchstart" in document.documentElement)
+		{
+		  let root = document.getElementsByTagName( 'html' )[0];
+		  root.setAttribute("class", "mobile01");
+		}	
+
 		openbox00.scrollIntoView({
 			behavior: "smooth"
 		});
@@ -425,7 +438,13 @@ function GlobalAnimations() {
 		closebox00.addEventListener("click", () => {
 			if (openbox00.parentNode) {
 				openbox00.parentNode.removeChild(openbox00);
+
 				document.getElementById("hull").classList.add("hull-no-ani");
+				if ("ontouchstart" in document.documentElement)
+				{
+				  let root = document.getElementsByTagName( 'html' )[0];
+				  root.setAttribute("class", "mobile01 mobile00")
+				}
 			}
 		});
 	}

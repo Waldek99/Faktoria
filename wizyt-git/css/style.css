@@ -43,14 +43,13 @@ body.hull-no-ani {
 }
 
 
-#planksAB-banner.planksAB-banner-ani {
-	animation: planksAB-banner-ani-00 5s forwards;
+#banner.banner-ani {
+	animation: banner-ani-00 5s forwards;
 }
-@keyframes planksAB-banner-ani-00 {
-	0% {transform: translate(0,-290px) scale(0.97);}
-	50% {transform: translate(0, -260px) scale(0.97);}
-	100% {transform: translate(0, -290px) scale(0.97);}
-
+@keyframes banner-ani-00 {
+	0% {transform: translate(-51%,0px);}
+	50% {transform: translate(-51%,30px);}
+	100% {transform: translate(-51%, 0px);}
 }
 
 /* tape-A.svg animations */
