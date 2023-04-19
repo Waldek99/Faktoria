@@ -125,7 +125,7 @@ function GlobalAnimations() {
 				//		tape_A_ani[i].childNodes[3].style.display = "none";
 				//	}			
 				//}
-			});		
+			});	
 		}
 	}
 
@@ -368,85 +368,129 @@ function GlobalAnimations() {
 	}
 
 	// function InsideBox00 run from function OpenBox02
-	function InsideBox00() {
+	function InsideBox00(event) {
 
-		let openbox00 = document.createElement("div");
-		let openbox01 = document.createElement("div");
-		let closebox00 = document.createElement("div");
+		let stop_or_go
+		let click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
 
-		openbox00.className = "openbox00";
-		openbox01.className = "openbox01";
-		closebox00.className = "closebox00";
-
-		let height00 = window.innerHeight + "px";
-		openbox00.style.height = height00;
-		openbox00.appendChild(openbox01);
-		document.body.appendChild(openbox00);
-		document.getElementById("hull").className = " ";
-
-		if ("ontouchstart" in document.documentElement)
-		{
-		  let root = document.getElementsByTagName( 'html' )[0];
-		  root.setAttribute("class", "mobile01");
-		}	
-
-		openbox00.scrollIntoView({
-			behavior: "smooth"
-		});
-
-		
-
-		let inside00 = event.currentTarget;
-		let clone00;
-
-		if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
-			if (inside00.classList.contains("left00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures01 left00";
-				openbox01.appendChild(clone00);
+		for (let z = 0; z < click_obj_blockade.length; z++) {
+			if (click_obj_blockade[z].style.pointerEvents == "none") {
+				stop_or_go = "stop";
 			}
-			if (inside00.classList.contains("center00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures01 center00";
-				openbox01.appendChild(clone00);
-			}
-			if (inside00.classList.contains("right00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures01 right00";
-				openbox01.appendChild(clone00);
-			}
-		}
-		if (inside00.closest(".slide02") !== null || inside00.closest(".slide03") !== null ) {
-			if (inside00.classList.contains("left00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures02 left00";
-				openbox01.appendChild(clone00);
-			}
-			if (inside00.classList.contains("center00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures02 center00";
-				openbox01.appendChild(clone00);
-			}
-			if (inside00.classList.contains("right00")) {
-				clone00 = inside00.cloneNode(true);
-				clone00.className = "miniatures00 miniatures02 right00";
-				openbox01.appendChild(clone00);
+			if (click_obj_blockade[z].style.pointerEvents != "none") {
+				stop_or_go = "go";
 			}
 		}
 
-		openbox00.appendChild(closebox00);
-		closebox00.addEventListener("click", () => {
-			if (openbox00.parentNode) {
-				openbox00.parentNode.removeChild(openbox00);
+		if (stop_or_go == "go") {
 
-				document.getElementById("hull").classList.add("hull-no-ani");
-				if ("ontouchstart" in document.documentElement)
-				{
-				  let root = document.getElementsByTagName( 'html' )[0];
-				  root.setAttribute("class", "mobile01 mobile00")
+			let openbox00 = document.createElement("div");
+			let openbox01 = document.createElement("div");
+			let closebox00 = document.createElement("div");
+			let closeboxImg = document.createElement("iframe");
+
+			openbox00.className = "openbox00";
+			openbox01.className = "openbox01";
+			closebox00.className = "closebox00";
+			closeboxImg.className = "closeboxImg";
+
+			closeboxImg.src = "img/button.svg";
+			closeboxImg.title = "Close";
+			closeboxImg.scrolling = "no";
+			closebox00.appendChild(closeboxImg);
+
+			let height00 = window.innerHeight + "px";
+			openbox00.style.height = height00;
+			openbox00.appendChild(openbox01);
+			document.body.appendChild(openbox00);
+			document.getElementById("hull").className = " ";
+
+			if ("ontouchstart" in document.documentElement) {
+			  let root = document.getElementsByTagName( 'html' )[0];
+			  root.setAttribute("class", "mobile01");
+			}	
+
+			openbox00.scrollIntoView({
+				behavior: "smooth"
+			});
+
+			
+			let inside00 = event.currentTarget;
+			let clone00;
+
+			if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
+				if (inside00.classList.contains("left00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 left00";
+					openbox01.appendChild(clone00);
+				}
+				if (inside00.classList.contains("center00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 center00";
+					openbox01.appendChild(clone00);
+				}
+				if (inside00.classList.contains("right00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures01 right00";
+					openbox01.appendChild(clone00);
 				}
 			}
-		});
+			if (inside00.closest(".slide02") !== null || inside00.closest(".slide03") !== null ) {
+				if (inside00.classList.contains("left00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 left00";
+					openbox01.appendChild(clone00);
+				}
+				if (inside00.classList.contains("center00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 center00";
+					openbox01.appendChild(clone00);
+				}
+				if (inside00.classList.contains("right00")) {
+					clone00 = inside00.cloneNode(true);
+					clone00.className = "miniatures00 miniatures02 right00";
+					openbox01.appendChild(clone00);
+				}
+			}
+
+			openbox00.appendChild(closebox00);
+			closeboxImg.addEventListener("load", () => {
+				closeboxImg.contentDocument.getElementById("ButtonCircles").addEventListener("click", () => {
+					if (openbox00.parentNode) {
+						openbox00.parentNode.removeChild(openbox00);
+
+						document.getElementById("hull").classList.add("hull-no-ani");
+						if ("ontouchstart" in document.documentElement)
+						{
+						  let root = document.getElementsByTagName( 'html' )[0];
+						  root.setAttribute("class", "mobile01 mobile00")
+						}
+					}
+				});
+			});
+			openbox00.addEventListener('animationend', (event) => {
+
+				if (event.animationName == "open-box-ani-02") {
+
+					let parent00 = document.getElementsByClassName("openbox01");
+
+					let miniatures_new = document.createElement("div");
+					miniatures_new.className = "miniatures03";
+
+					let image_new = document.createElement("img");
+					image_new.className = this.children[0].className;
+					image_new.src = this.children[0].src;
+
+
+					// replacing a clone with a new element
+					miniatures_new.appendChild(image_new);
+					parent00[0].replaceChild(miniatures_new, parent00[0].children[0]);
+				}
+			});	
+		}
+		else {
+			event.preventDefault();
+		}
 	}
 
 	// planksAB-banner animations

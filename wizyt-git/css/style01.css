@@ -467,7 +467,12 @@ body.hull-no-ani {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-
+	border: 15px solid transparent;
+	animation: open-box-ani-03 4s 8s forwards;
+}
+@keyframes open-box-ani-03 {
+	0% { border-image: url(../img/frame.png) 2% round; border-image-outset: 15px;}
+	100% { border-image: url(../img/frame.png) 2% round; border-image-outset: 0px;}
 }
 .openbox01 {
 	position: relative;
@@ -478,16 +483,22 @@ body.hull-no-ani {
 
 }
 @keyframes open-box-ani-01 {
-	100% {width: 100%; height: 100%; background-color: black;}
+	0% {background-image: url("../img/wall-0.svg");}
+	100% {width: 100%; height: 100%; background-image: url("../img/wall-0.svg");}
 }
 .closebox00 {
+	transform: scale(0.73);
 	position: fixed;
-	background-color: hotpink;
 	cursor: pointer;
-	top: 0;
-	right: 0;
+	top: 10px;
+	right: 10px;
 	width: 60px;
 	height: 60px;
+}
+.closeboxImg {
+	height: 100%;
+	width: 100%;
+	border: none;
 }
 
 .miniatures01 {
@@ -542,9 +553,25 @@ body.hull-no-ani {
 	animation-fill-mode: forwards, forwards;
 }
 @keyframes open-box-ani-00 {
-	100% {width: 100%; height: 100%; transform: translate(0,0); background-color: black;}
+	100% {width: 100%; height: 100%; transform: translate(0,0);}
 }
 @keyframes open-box-ani-02 {
-	100% {width: 100%; height: 80%; transform: translate(0%,14%);}
+	100% {width: 100%; height: 100%; padding-block: 40px; background-color: transparent;}
+}
+
+
+/* after opening Box */
+
+.miniatures03 {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	padding-block: 40px;
+}
+.miniatures03 > img {
+	box-shadow: 10px 10px 6px #0000002e,
+				-10px -10px 6px #0000002e,
+				10px -10px 6px #0000002e,
+				-10px 10px 6px #0000002e;
 }
 
