@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+body > div {
+	display: none;
+}
+.letmein {
+	position: absolute;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+.letmein.letmiout {
+	display: none;
+}
+.StartButton {
+	background: white;
+	width: 80%;
+	height: 20%;
+	font-family: "Comic sans MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+}

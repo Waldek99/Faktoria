@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="60" height="60" version="1.1" viewBox="0 0 15.875 15.875" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient id="radialGradient3482" cx="73.396" cy="92.894" r="5.9771" gradientUnits="userSpaceOnUse">
+            <stop id="InsideStop00" stop-color="#ff2e2e" offset="0" />
+            <stop id="InsideStop01" stop-color="#e00000" offset="1" />
+        </radialGradient>
+        <radialGradient id="radialGradient3490" cx="73.396" cy="92.894" r="8.2021" gradientUnits="userSpaceOnUse">
+            <stop id="OutsideStop00" stop-color="#820000" offset=".58"/>
+            <stop id="OutsideStop01" stop-color="#e00000" offset="1"/>
+        </radialGradient>
+        <filter id="filter3531" x="-.78474" y="-.78474" width="2.5695" height="2.5695" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="1.5943057"/>
+        </filter>
+        <use href="#ButtonGradAni" />
+    </defs>
+    <defs>
+        <g id="ButtonGradAni">
+            <animate href="#InsideStop00" dur="1.5s" atributeType="XML" attributeName="stop-color" from="rgb(255, 46, 46)" to="rgb(142, 0, 0)" begin="CircleInside.mouseenter" fill="freeze" />
+            <animate href="#InsideStop01" dur="1.5s" atributeType="XML" attributeName="stop-color" from="rgb(224, 0, 0)" to="rgb(123, 0, 0)" begin="CircleInside.mouseenter" fill="freeze" />
+            <animate href="#CircleInside" dur="1.5s" atributeType="XML" attributeName="stroke" from="rgb(199, 0, 0)" to="rgb(149, 0, 0)" begin="CircleInside.mouseenter" fill="freeze" />
+            <animate href="#CircleLight" dur="1.5s" atributeType="XML" attributeName="fill" from="white" to="black" begin="CircleInside.mouseenter" fill="freeze" />
+
+            <animate href="#InsideStop00" dur="1.5s" atributeType="XML" attributeName="stop-color" from="rgb(142, 0, 0)" to="rgb(255, 46, 46)" begin="CircleInside.mouseleave" fill="freeze" />
+            <animate href="#InsideStop01" dur="1.5s" atributeType="XML" attributeName="stop-color" from="rgb(123, 0, 0)" to="rgb(224, 0, 0)" begin="CircleInside.mouseleave" fill="freeze" />
+            <animate href="#CircleInside" dur="1.5s" atributeType="XML" attributeName="stroke" from="rgb(149, 0, 0)" to="rgb(199, 0, 0)" begin="CircleInside.mouseleave" fill="freeze" />
+            <animate href="#CircleLight" dur="1.5s" atributeType="XML" attributeName="fill" from="black" to="white" begin="CircleInside.mouseleave" fill="freeze" />  
+        </g>
+    </defs>
+    <g transform="translate(-65.454 -84.952)">
+        <g id="ButtonGroup">
+            <rect id="ButttonBG" x="65.458" y="84.957" width="15.875" height="15.875" display="none" style="paint-order:fill markers stroke"/>
+            <g id="ButtonCircles" transform="matrix(.975 0 0 .975 1.8301 2.3175)" stroke-width="1.0006" style="cursor:pointer">
+                <rect id="CircleOutside" x="65.458" y="84.957" width="15.875" height="15.875" rx="7.9375" ry="7.9375" fill="url(#radialGradient3490)" stroke="#ac0000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".40705" style="paint-order:fill markers stroke"/>
+                <rect id="CircleInside" x="67.551" y="87.049" width="11.69" height="11.69" rx="5.8448" ry="5.8448" fill="url(#radialGradient3482)" stroke="#c70000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".27137" style="paint-order:fill markers stroke"/>
+                <rect id="CircleLight" transform="matrix(.41836 0 0 .41836 42.69 54.031)" x="70.958" y="90.456" width="4.8759" height="4.8759" rx="2.438" ry="2.438" fill="#fff" filter="url(#filter3531)" opacity=".72704" style="mix-blend-mode:normal;paint-order:fill markers stroke"/>
+            </g>
+        </g>
+    </g>
+</svg>

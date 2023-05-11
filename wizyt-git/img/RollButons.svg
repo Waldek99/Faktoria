@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="125.37" height="295.37" version="1.1" viewBox="0 0 33.17 78.149" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="filter1825" x="-.21232" y="-.072419" width="1.4246" height="1.1448" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="2.0597805"/>
+        </filter>
+    </defs>
+    <defs>
+        <g id="RollButtonAni00">
+            <g id="ArrowsAni">
+                <set href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsUp.mouseenter" fill="freeze" />
+                <set href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsUp.mouseleave" fill="freeze" />
+
+                <set href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsDown.mouseenter" fill="freeze" />
+                <set href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsDown.mouseleave" fill="freeze" />
+
+                <set id="ArrowsAni00" href="#ArrowA" dur="0.1s" atributeType="XML" attributeName="fill" to="#008000" begin="RollButtonsUp.click" fill="freeze" />
+                <set id="ArrowsAni0A" href="#Arrow0A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="
+                    ArrowsAni00.end;
+                    ArrowsAni00.end+0.75s;
+                    ArrowsAni00.end+1.5s;
+                    ArrowsAni00.end+2.25s" />
+                <set id="ArrowsAni1A" href="#Arrow1A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni0A.end" />
+                <set id="ArrowsAni2A" href="#Arrow2A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni1A.end" />
+
+                <set id="ArrowsAni01" href="#ArrowB" dur="0.1s" atributeType="XML" attributeName="fill" to="#008000" begin="RollButtonsDown.click" fill="freeze" />
+                <set id="ArrowsAni0B" href="#Arrow0B" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="
+                    ArrowsAni01.end;
+                    ArrowsAni01.end+0.75s;
+                    ArrowsAni01.end+1.5s;
+                    ArrowsAni01.end+2.25s" />
+                <set id="ArrowsAni1B" href="#Arrow1B" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni0B.end" />
+                <set id="ArrowsAni2B" href="#Arrow2B" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni1B.end" />
+            </g>
+            <g id="BaseArrowAni">
+                <animateTransform href="#RollButtonsUp" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni00.end" dur="2.25s" />
+                <animateTransform href="#RollButtonsDown" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni01.end" dur="2.25s" />
+                
+            </g>
+        </g>
+    </defs>
+    <g>
+        <path id="RollButonBaseShadow" d="m16.585 4.9435c6.4495 0 11.642 4.8712 11.642 10.922v46.419c0 6.0508-5.1922 10.922-11.642 10.922-6.4494 0-11.642-4.8712-11.642-10.922v-46.419c0-6.0507 5.1921-10.922 11.642-10.922z" filter="url(#filter1825)" opacity=".8" style="paint-order:fill markers stroke"/>
+        <path id="RollButonBase" d="m16.585 6.2664c5.7167 0 10.319 4.6824 10.319 10.499v44.619c0 5.8163-4.6021 10.499-10.319 10.499s-10.319-4.6823-10.319-10.499v-44.619c0-5.8163 4.6022-10.499 10.319-10.499z" fill="#611800" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".52917" style="paint-order:fill markers stroke"/>
+        <g class="RollArrows" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".52917">
+            <path id="BaseArrowB1" d="m12.22 42.25h9.2604v19.844s-1.9388 6.6146-4.6302 6.6146c-2.6913 0-4.6302-6.6146-4.6302-6.6146z" fill="#000000" style="paint-order:fill markers stroke"/>
+            <g id="RollButtonsDown" style="transform-origin: center; transform-box: fill-box;">
+                <path id="BaseArrowB" d="m12.22 42.25h9.2604v19.844s-1.9388 6.6146-4.6302 6.6146c-2.6913 0-4.6302-6.6146-4.6302-6.6146z" fill="#ff7f2a" style="paint-order:fill markers stroke"/>
+                <g id="ArrowB" fill="#008000">
+                    <path id="Arrow2B" d="m20.286 58.217v3.7066l-3.4359 4.942-3.4357-4.942v-3.7066l3.4357 4.49z" style="paint-order:fill markers stroke"/>
+                    <path id="Arrow1B" d="m20.286 51.155v3.7065l-3.4359 4.9421-3.4357-4.942v-3.7065l3.4357 4.4899z" style="paint-order:fill markers stroke"/>
+                    <path id="Arrow0B" d="m20.286 44.092v3.7066l-3.4359 4.9421-3.4357-4.9421v-3.7066l3.4357 4.49z" style="paint-order:fill markers stroke"/>
+                </g>
+            </g>
+            <path id="BaseArrowA1" d="m12.22 36.429h9.2604v-19.844s-1.9388-6.6147-4.6302-6.6147c-2.6913 0-4.6302 6.6147-4.6302 6.6147z" fill="#000000" style="paint-order:fill markers stroke"/>
+            <g id="RollButtonsUp" style="transform-origin: center; transform-box: fill-box;">
+                <path id="BaseArrowA" d="m12.22 36.429h9.2604v-19.844s-1.9388-6.6147-4.6302-6.6147c-2.6913 0-4.6302 6.6147-4.6302 6.6147z" fill="#ff7f2a" style="paint-order:fill markers stroke"/>
+                <g id="ArrowA" fill="#008000">
+                    <path id="Arrow2A" d="m20.286 20.462v-3.7066l-3.4359-4.9421-3.4357 4.9421v3.7066l3.4357-4.49z" style="paint-order:fill markers stroke"/>
+                    <path id="Arrow1A" d="m20.286 27.524v-3.7064l-3.4359-4.9421-3.4357 4.9421v3.7064l3.4357-4.4898z" style="paint-order:fill markers stroke"/>
+                    <path id="Arrow0A" d="m20.286 34.586v-3.7066l-3.4359-4.9421-3.4357 4.9421v3.7066l3.4357-4.49z" style="paint-order:fill markers stroke"/>
+                </g>
+            </g>
+        </g>
+        <use href="#RollButtonAni00" />
+    </g>
+</svg>

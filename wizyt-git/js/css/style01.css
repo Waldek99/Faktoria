@@ -35,35 +35,6 @@ body.hull-no-ani {
 
 
 
-body > div {
-	display: block;
-}
-
-.letmein {
-	position: absolute;
-	display: flex;
-	align-items:center;
-	justify-content:center;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: black;
-}
-.letmein.letmeout {
-	display: none;
-}
-.StartButton {
-	background: white;
-	width: 80%;
-	height: 20%;
-	font-family: "Comic sans MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-
-
 
 /* planksAB-banner.svg animations */
 
@@ -83,19 +54,18 @@ body > div {
 	animation: side-center-ani-00 5s forwards;
 }
 @keyframes side-center-ani-00 {
-	0% {top: -600px; height: 900px;}
-	99% {top: 0px; height: 900px;}
-	100% {top: 0px; height: 600px;}
+	0% {top: -800px; height: 1160px;} /* 0% {top: -165%; height: 1920px;} */
+	99% {top: 0px; height: 1160px;}
+	100% {top: 0px; height: 800px;}
 }
-
 
 #banner.banner-ani {
 	animation: banner-ani-00 5s forwards;
 }
 @keyframes banner-ani-00 {
-	0% {transform: translate(-51%,0px); height: 170px;}
-	50% {transform: translate(-51%,30px); height: 200px;}
-	100% {transform: translate(-51%, 0px); height: 170px;}
+	0% {transform: translate(-51%,0px); height: 230px;}
+	50% {transform: translate(-51%,30px); height: 260px;}
+	100% {transform: translate(-51%, 0px); height: 230px;}
 }
 
 /* tape-A.svg animations */
@@ -137,9 +107,9 @@ body > div {
 	animation: all-lines-ani-00 5s forwards;
 }
 @keyframes all-lines-ani-00 {
-	0% {bottom: 390px;}
-	99% {bottom: 390px;}
-	100% {bottom: 90px;}
+	0% {bottom: 470.5px;}
+	99% {bottom: 470.5px;}
+	100% {bottom: 110px;}
 }
 
 /* tape-A.svg animations buttons */
@@ -172,7 +142,7 @@ body > div {
 	animation: side-bottom-ani-00 5s forwards;
 }
 @keyframes side-bottom-ani-00 {
-	100% {transform: translate(0, 300px);}
+	100% {transform: translate(0, 440px);}
 }
 
 
@@ -180,7 +150,7 @@ body > div {
 	animation: all-gutters-down-ani-00 5s forwards;
 }
 @keyframes all-gutters-down-ani-00 {
-	100% {top: 360px}
+	100% {top: 496px}
 }
 
 
@@ -199,8 +169,8 @@ body > div {
 }
 
 #banner {
-	width: 578.367px;
-	height: 170px;
+	width: 824.167px;
+	height: 230px;
 	margin-left: 50%;
 	transform: translate(-51%, 0);
 }
@@ -208,7 +178,7 @@ body > div {
 #planksAB-banner {
 	position: relative;
 	transform-origin: 0 0;
-	transform: translate(0, -120px) scale(0.4);
+	transform: translate(0, -170px) scale(0.57);
 
 
 }
@@ -219,26 +189,26 @@ body > div {
 
 #side-center {
 	background-image: url("../img/wall-0.svg");
-	background-size: 20%;
+	background-size: 25%;
 	position: absolute;
 	width: 100%;
-	height: 900px;
+	height: 1160px;
 	overflow: hidden;
-	top: -600px;
+	top: -800px;
 }
 
 #trough-left {
 	position: absolute;
 	left: 0.6%;
-	top: -185px;
-	transform: scale(0.8);
+	top: -155px;
+	transform: scale(0.85);
 }
 
 #trough-right {
 	position: absolute;
 	right: 0.6%;
-	top: -185px;
-	transform: scale(0.8);
+	top: -155px;
+	transform: scale(0.85);
 }
 
 .contact-group {
@@ -250,21 +220,21 @@ body > div {
 	position: absolute;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
-	bottom: 390px;
+	bottom: 470.5px;
 }
 
 .lines {
 	position: relative;
-	height: 160px;
+	height: 240px;
 }
 
 #AllBoxes {
 	position: absolute;
 	display: flex;
 	justify-content: space-around;
-	top: 115px;
+	top: 200px;
 	left: 0;
-	width: 100%; /* 1518px == 100% */
+	width: 100%;
 }
 
 .slides {
@@ -279,7 +249,7 @@ body > div {
 	justify-content: space-around;
 }
 .Boxes {
-	transform: scale(0.45);
+	transform: scale(0.6);
 	position: absolute;
 }
 
@@ -315,9 +285,9 @@ body > div {
 	position: absolute;
 	background-color: white;
 	cursor: pointer;
-	width: 125px;
-	height: 56px;
-	transform: translate(12px, 96px);
+	width: 166px;
+	height: 75.5px;
+	transform: translate(16px, 90px);
 }
 .slides-images-00 {
 	scale: 0.95;
@@ -361,36 +331,36 @@ body > div {
 	animation: boxes-ani-R02 15s reverse forwards;
 }
 @keyframes boxes-ani-R02 {
-	0% {transform: translate(-100%, 160px);}
-	100% {transform: translate(0%, 160px);}
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
 }
 .slides.slides-left.slide02 {
 	animation: boxes-ani-L02 15s forwards;
 }
 @keyframes boxes-ani-L02 {
-	0% {transform: translate(-100%, 160px);}
-	100% {transform: translate(0%, 160px);}
+	0% {transform: translate(-100%, 240px);}
+	100% {transform: translate(0%, 240px);}
 }
 .slides.slides-right.slide03 {
 	animation: boxes-ani-R03 15s reverse forwards;
 }
 @keyframes boxes-ani-R03 {
-	0% {transform: translate(0%, 160px);}
-	100% {transform: translate(100%, 160px);}
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
 }
 .slides.slides-left.slide03 {
 	animation: boxes-ani-L03 15s forwards;
 }
 @keyframes boxes-ani-L03 {
-	0% {transform: translate(0%, 160px);}
-	100% {transform: translate(100%, 160px);}
+	0% {transform: translate(0%, 240px);}
+	100% {transform: translate(100%, 240px);}
 }
 /* flipped items for classes slide02, slide03 */
 .slide02 .Boxes {
-	transform: scale(-0.45, 0.45);
+	transform: scale(-0.6, 0.6);
 }
 .slide03 .Boxes {
-	transform: scale(-0.45, 0.45);
+	transform: scale(-0.6, 0.6);
 }
 .slide02 .Boxes #Category00Text {
 	transform: translate(54.5%, 1%) scaleX(-1);
@@ -411,10 +381,10 @@ body > div {
 	transform: translate(101.5%, -9%) scaleX(-1);
 }
 .slide02 .miniatures00 {
-	transform: translate(-12px, 96px);
+	transform: translate(-16px, 90px);
 }
 .slide03 .miniatures00 {
-	transform: translate(-12px, 96px);
+	transform: translate(-16px, 90px);
 }
 
 
@@ -426,27 +396,27 @@ body > div {
 }
 
 .grips#grip-A {
-	top: 189px;
+	top: 281px;
 	left: -30px;
 }
 
 .grips#grip-B {
-	top: 349px;
+	top: 521px;
 	left: 30px;
 }
 
 #roll-tape-A {
-	left: -10px;
+	left: -25px;
 }
 
 #roll-tape-B {
-	left: 8px;
+	left: 18px;
 }
 
 .tapes {
 	position: absolute;
 	margin-left: 50%;
-	transform: translate(-50%, 0) scale(0.65);
+	transform: translate(-50%, 0) scale(0.75);
 	bottom: 0;
 }
 
@@ -458,7 +428,7 @@ body > div {
 }
 
 #street {
-	transform: translate(-50%, -23px) scale(0.4);
+	transform: translate(-50%, -27px) scale(0.55);
 	margin-left: 50%;
 }
 
@@ -470,17 +440,17 @@ body > div {
 
 .all-gutters-down {
 	position: absolute;
-	top: 58px;
+	top: 55px;
 }
 
 #gutter-down-left {
-	left: 0.3%;
-	transform: scale(0.65);
+	left: 0.6%;
+	transform: scale(0.73);
 }
 
 #gutter-down-right {
-	transform: scale(-0.65, 0.65);
-	right: 0.3%;
+	transform: scale(-0.73, 0.73);
+	right: 0.6%;
 }
 
 /* side-bottom */
@@ -488,7 +458,6 @@ body > div {
 #AllMailBox  {
 	cursor: pointer;
 }
-
 
 /* openbox
 /* scroll blocking >> body.hull-no-ani */
@@ -511,17 +480,18 @@ body > div {
 	width: 95%;
 	height: 75%;
 	animation: open-box-ani-01 4s 8s forwards;
+
 }
 @keyframes open-box-ani-01 {
 	0% {background-image: url("../img/wall-0.svg");}
 	100% {width: 100%; height: 100%; background-image: url("../img/wall-0.svg");}
 }
 .closebox00 {
-	transform: scale(0.65);
+	transform: scale(0.73);
 	position: fixed;
 	cursor: pointer;
-	top: 5px;
-	right: 5px;
+	top: 10px;
+	right: 10px;
 	width: 60px;
 	height: 60px;
 }
@@ -537,21 +507,21 @@ body > div {
 
 }
 .miniatures01.left00 {
-	transform: translate(67px,-11px);
+	transform: translate(66px,4px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures01.center00 {
-	transform: translate(352px,-11px);
+	transform: translate(386px,4px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures01.right00 {
-	transform: translate(636.5px,-11px);
+	transform: translate(708px,4px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
@@ -562,21 +532,21 @@ body > div {
 	cursor: initial;
 }
 .miniatures02.left00 {
-	transform: translate(42.5px,157.5px);
+	transform: translate(34px,257px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.center00 {
-	transform: translate(327.5px,157.5px);
+	transform: translate(354px,257px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.right00 {
-	transform: translate(612.5px,157.5px);
+	transform: translate(676px,257px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 8s, 8s;
 	animation-delay: 0s, 8s;
@@ -586,144 +556,22 @@ body > div {
 	100% {width: 100%; height: 100%; transform: translate(0,0);}
 }
 @keyframes open-box-ani-02 {
-	100% {width: 100%; height: 100%; padding-block: 30px; background-color: transparent;}
+	100% {width: 100%; height: 100%; padding-block: 40px; background-color: transparent;}
 }
 
 
 /* after opening Box */
 
-.Inbox01 {
-	position: relative;
-	display: flex;
-	flex-flow: column;
-	align-self: center;
-	width: 100%; 
-	height: 100%; 
-	background-image: url("../img/wall-0.svg");
-}
-
 .miniatures03 {
-	position: relative;
-	height: 75%;
+	background-color: transparent;
 	width: 100%;
+	height: 100%;
+	padding-block: 40px;
 }
 .miniatures03 > img {
-	border: 1px solid black;
-	border-top: 0px;
-	scale: 1.0;
-}
-.img-shadow00 {
-	position: absolute;
-	top:50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	box-shadow: 0px 0px 6px 6px  #0000005c;
-}
-.uppersection {
-	position: relative;
-	width: 100%;
-	height: 12.5%;
-}
-.bottomsection {
-	position: relative;
-	width: 100%;
-	height: 12.5%;
-}
-.leftsection {
-	display: flex;
-	align-items:center;
-	justify-content:center;
-	position: absolute;
-	width: 16%;
-	height: 100%;
-	left: 20px;
-}
-.rightsection {
-	display: flex;
-	align-items:center;
-	justify-content:center;
-	position: absolute;
-	width: 16%;
-	height: 100%;
-	right: 20px;
+	box-shadow: 10px 10px 6px #0000002e,
+				-10px -10px 6px #0000002e,
+				10px -10px 6px #0000002e,
+				-10px 10px 6px #0000002e;
 }
 
-.sub00 {
-	display: flex;
-	flex-direction: row-reverse;
-	height: 100%;
-	margin-left: 50%;
-	transform: translate(-50%, 0px);
-}
-.sub01 {
-	flex-grow: 1;
-	display: flex;
-	align-items:center;
-	justify-content:center;
-	position: absolute;
-	background-color: white;
-	height: 70%;
-	width: 38%;
-	border-radius: 25px 25px 0px 0px;
-	box-shadow: 0px 0px 6px 6px  #0000005c;
-	border: 1px solid black;
-	bottom: 0;
-}
-#sect-sub01 {
-	right: 0;
-}
-#sect-sub02 {
-	left: 50%;
-	transform: translate(-50%);
-}
-#sect-sub03 {
-	left: 0;
-	border-bottom-color: white;
-}
-.sub01.reaction00 {
-	border-bottom-color: white;
-	z-index: 3;
-}
-.sub01-titles {
-	font-family: "Comic sans MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 15px;
-	pointer-events: none;
-}
-.navi-all {
-	position: relative;
-	width: 128px;
-	height: 298px;
-}
-.navi-all-img {
-	scale: 0.6;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-.chain-all {
-	position: relative;
-	width: 52px;
-	height: 6300px;
-}
-.long-chain-img {
-	scale: 0.6;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-.long-chain-img.chain-img-up {
-	transform: translate(0px, 125px);
-}
-.leftsection.leftsection00 {
-	overflow: hidden;
-	justify-content:space-evenly;
-	pointer-events: none;
-}
-.rightsection.rightsection00 {
-	overflow: hidden;
-	justify-content:space-evenly;
-	pointer-events: none;
-}

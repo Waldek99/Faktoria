@@ -1,6 +1,30 @@
 "use strict";
 function GlobalAnimations() {
 
+	function FullScreenMode() {
+
+		let let_me_in  = document.createElement("div"),
+		button00 = document.createElement("button"),
+		text00 = document.createTextNode("Obróć smartfona, następnie dotkni aby uruchomić. Strona uruchomi się w trybie fullscreen.");
+
+		let_me_in.className = "letmein";
+		button00.className = "StartButton";
+		button00.type = "button";
+
+		button00.appendChild(text00);
+		let_me_in.appendChild(button00);
+		document.documentElement.children[1].appendChild(let_me_in);
+
+		button00.addEventListener("click", (event) => {
+			if (document.documentElement.requestFullscreen) {
+
+            	document.documentElement.requestFullscreen();
+				let_me_in.className = "letmein letmeout";
+         	}
+
+		});
+	}
+
 	function RollWall() {
 
 		const small_planks = document.getElementsByClassName("all-small-planks");
@@ -30,10 +54,10 @@ function GlobalAnimations() {
 	// Instead, you have to use clever tricks to get a stopped animation to replay.
 	function RollTape_00 (click_obj, ani_obj) {
 
-		let class_of_ani = "all-no-ani-buttons";
-		let class_on_ani = "tape-A-ani";
-		let class_of_ani_buttons = "tape-A-00-buttons";
-		let class_on_ani_buttons = "tape-A-00-buttons-ani";
+		let class_of_ani = "all-no-ani-buttons",
+			class_on_ani = "tape-A-ani",
+			class_of_ani_buttons = "tape-A-00-buttons",
+			class_on_ani_buttons = "tape-A-00-buttons-ani";
 
 		for (let i = 0; i < click_obj.length; i++) {
 			click_obj[i].addEventListener("click", () => {
@@ -91,8 +115,8 @@ function GlobalAnimations() {
 
 	function AniInProgress_00() {
 
-		let tape_A_ani = document.querySelectorAll(".all-no-ani-buttons,#PlankSmall");
-		let click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
+		let tape_A_ani = document.querySelectorAll(".all-no-ani-buttons,#PlankSmall"),
+			click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
 
 		for (let i = 0; i < tape_A_ani.length; i++) {
 			tape_A_ani[i].addEventListener('animationstart', (event) => {
@@ -339,8 +363,8 @@ function GlobalAnimations() {
 	// function OpenBox02 run from function BoxesAni_00
 	function OpenBox02() {
 
-		let allBoxes00 = document.getElementById("AllBoxes");
-		let thumbnail00;
+		let allBoxes00 = document.getElementById("AllBoxes"),
+			thumbnail00;
 
 		if (allBoxes00.children.length == 2 && !allBoxes00.classList.contains("end")) {
 			thumbnail00 = allBoxes00.children[0].getElementsByTagName("img");
@@ -368,10 +392,11 @@ function GlobalAnimations() {
 	}
 
 	// function InsideBox00 run from function OpenBox02
+	// Changes must be made before uploading to the server.
 	function InsideBox00(event) {
 
-		let stop_or_go
-		let click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
+		let stop_or_go,
+			click_obj_blockade = document.querySelectorAll(".tape-A-00-buttons-all,.all-small-planks");
 
 		for (let z = 0; z < click_obj_blockade.length; z++) {
 			if (click_obj_blockade[z].style.pointerEvents == "none") {
@@ -399,8 +424,7 @@ function GlobalAnimations() {
 			closeboxImg.scrolling = "no";
 			closebox00.appendChild(closeboxImg);
 
-			let height00 = window.innerHeight + "px";
-			openbox00.style.height = height00;
+			openbox00.style.height = window.innerHeight + "px";
 			openbox00.appendChild(openbox01);
 			document.body.appendChild(openbox00);
 			document.getElementById("hull").className = " ";
@@ -415,8 +439,8 @@ function GlobalAnimations() {
 			});
 
 			
-			let inside00 = event.currentTarget;
-			let clone00;
+			let inside00 = event.currentTarget,
+				clone00;
 
 			if (inside00.closest(".slide00") !== null || inside00.closest(".slide01") !== null ) {
 				if (inside00.classList.contains("left00")) {
@@ -455,6 +479,9 @@ function GlobalAnimations() {
 
 			openbox00.appendChild(closebox00);
 			closeboxImg.addEventListener("load", () => {
+
+				// It doesn't work on a local folder. Before uploading to the server, remove "//".
+				
 				closeboxImg.contentDocument.getElementById("ButtonCircles").addEventListener("click", () => {
 					if (openbox00.parentNode) {
 						openbox00.parentNode.removeChild(openbox00);
@@ -469,22 +496,8 @@ function GlobalAnimations() {
 				});
 			});
 			openbox00.addEventListener('animationend', (event) => {
-
 				if (event.animationName == "open-box-ani-02") {
-
-					let parent00 = document.getElementsByClassName("openbox01");
-
-					let miniatures_new = document.createElement("div");
-					miniatures_new.className = "miniatures03";
-
-					let image_new = document.createElement("img");
-					image_new.className = this.children[0].className;
-					image_new.src = this.children[0].src;
-
-
-					// replacing a clone with a new element
-					miniatures_new.appendChild(image_new);
-					parent00[0].replaceChild(miniatures_new, parent00[0].children[0]);
+					InsideBox0A(this);
 				}
 			});	
 		}
@@ -493,6 +506,119 @@ function GlobalAnimations() {
 		}
 	}
 
+	// function SlidesInBox run from function InsideBox00
+	function InsideBox0A(miniatures00) {
+
+		let parent00 = document.getElementsByClassName("openbox00");
+		let parent01 = document.createElement("div");
+		parent01.className = "Inbox01";
+
+		let className00 = ["img-shadow00", "uppersection", "miniatures03", "leftsection", "rightsection", "bottomsection"];
+		let titleNodes00 = ["Kod", "Opis", "Kategoria"];
+
+		for (let q = 0, p = className00.length; q < p; q++) {
+
+			let div00 = document.createElement("div");
+			div00.className = className00[q];
+			if (div00.className == className00[1]) {
+
+				let div01 = document.createElement("div");
+				div01.className = "sub00";
+
+				for (let z = 1; z <= 3; z++) {
+
+					let div03 = document.createElement("div");
+					let div04 = document.createElement("div");
+
+					div04.id = "title0" + z;
+					div04.className = "sub01-titles";
+					div04.appendChild(document.createTextNode(titleNodes00[z-1]));
+
+					div03.id = "sect-sub0" + z;
+					div03.className = "sub01";
+					div03.appendChild(div04);
+
+					div03.addEventListener("mouseover", (event) => {
+
+						event.target.classList.add("reaction00");
+						if (event.target.id != event.target.parentNode.lastChild.id) {
+							event.target.parentNode.lastChild.style.borderBottomColor = "black";
+							event.target.parentNode.lastChild.style.zIndex = "0";
+						}
+						if (event.target.id == event.target.parentNode.firstChild.id) {
+							event.target.parentNode.lastChild.style.zIndex = "-1";
+						}
+					});
+					div03.addEventListener("mouseout", (event) => {
+
+						event.target.classList.remove("reaction00");
+						event.target.parentNode.lastChild.style.borderBottomColor = "white";
+						event.target.parentNode.lastChild.style.zIndex = "initial";
+					});
+					div01.appendChild(div03);
+				}
+				div00.appendChild(div01);
+			}
+			if (div00.className == className00[3] || div00.className == className00[4]) {
+				
+				let div05 = document.createElement("div");
+				let iframe00 = document.createElement("iframe");
+
+				div05.className = "navi-all";
+				iframe00.className = "navi-all-img";
+				iframe00.src = "img/RollButons.svg";
+				iframe00.scrolling = "no";
+
+				div05.appendChild(iframe00);
+				div00.appendChild(div05);
+			}
+			if (div00.className == className00[2]) {
+
+				let image_new = document.createElement("img");
+				image_new.className = miniatures00.children[0].className;
+				image_new.src = miniatures00.children[0].src;
+
+				div00.appendChild(image_new);
+			}
+			parent01.appendChild(div00);
+		}
+
+		// The order matters.
+		parent00[0].replaceChild(parent01, parent00[0].children[0]);
+		parent01.children[0].style.width = parent01.children[2].firstChild.width + "px";
+		parent01.children[0].style.height = parent01.children[2].firstChild.height + "px";
+		parent01.children[1].firstChild.style.width = parent01.children[2].firstChild.width + "px";
+		parent01.children[2].firstChild.style.width = parent01.children[2].firstChild.clientWidth + "px";
+
+		//Adding a chain art element to the openbox element.
+		className00 = ["leftsection00", "rightsection00", "chain-all", "long-chain-img", "chain-img-up", "chain-img-down"];
+
+		for (let v = 0; v <= 1; v++) {
+
+			let div00 = document.createElement("div");
+			div00.className = className00[v].slice(0, -2) + " " + className00[v];
+
+			for (let y = 0; y <= 1; y++) {
+
+				let div01 = document.createElement("div");
+				let iframe00 = document.createElement("iframe");
+
+				div01.className = className00[2];
+				iframe00.className = className00[3] + " " + className00[5 - y];
+				iframe00.src = "img/chainA.svg";
+				iframe00.scrolling = "no";
+
+				div01.appendChild(iframe00);
+				div00.appendChild(div01);
+			}
+			parent00[0].insertBefore(div00, parent00[0].lastChild);
+		}
+	}
+
+
+	if ("ontouchstart" in document.documentElement) {
+		FullScreenMode();
+	}
 	// planksAB-banner animations
 	RollWall();
 	BoxesAni_00();
