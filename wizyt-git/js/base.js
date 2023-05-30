@@ -4,15 +4,16 @@ function GlobalAnimations() {
 	function FullScreenMode() {
 
 		let let_me_in  = document.createElement("div"),
-		button00 = document.createElement("button"),
-		text00 = document.createTextNode("Obróć smartfona, następnie dotkni aby uruchomić. Strona uruchomi się w trybie fullscreen.");
+		buttonBG = document.createElement("div"),
+		button00 = document.createElement("div");
 
 		let_me_in.className = "letmein";
+		buttonBG.className = "buttonBG";
 		button00.className = "StartButton";
-		button00.type = "button";
 
-		button00.appendChild(text00);
+		let_me_in.appendChild(buttonBG);
 		let_me_in.appendChild(button00);
+
 		document.documentElement.children[1].appendChild(let_me_in);
 
 		button00.addEventListener("click", (event) => {
@@ -435,7 +436,9 @@ function GlobalAnimations() {
 			}	
 
 			openbox00.scrollIntoView({
-				behavior: "smooth"
+				behavior: "smooth",
+				block: "center",
+				inline: "nearest"
 			});
 
 			
@@ -506,92 +509,104 @@ function GlobalAnimations() {
 		}
 	}
 
-	// function SlidesInBox run from function InsideBox00
+	// function InsideBox0A run from function InsideBox00
 	function InsideBox0A(miniatures00) {
 
-		let parent00 = document.getElementsByClassName("openbox00");
-		let parent01 = document.createElement("div");
-		parent01.className = "Inbox01";
+		let parent00 = document.getElementsByClassName("openbox00"),
+		prosecutor00 = document.createElement("div");
+		prosecutor00.className = "prosecutor00";
 
-		let className00 = ["img-shadow00", "uppersection", "miniatures03", "leftsection", "rightsection", "bottomsection"];
-		let titleNodes00 = ["Kod", "Opis", "Kategoria"];
+		for (let l = 0; l < 3; l++) {
+			let parent01 = document.createElement("div");
+			parent01.className = "Inbox01";
+			parent01.id = "Box-0" + l;
 
-		for (let q = 0, p = className00.length; q < p; q++) {
+			let className00 = ["img-shadow00", "uppersection", "miniatures03", "leftsection", "rightsection", "bottomsection"];
+			let titleNodes00 = ["Kod", "Opis", "Kategoria"];
 
-			let div00 = document.createElement("div");
-			div00.className = className00[q];
-			if (div00.className == className00[1]) {
+			for (let q = 0, p = className00.length; q < p; q++) {
 
-				let div01 = document.createElement("div");
-				div01.className = "sub00";
+				let div00 = document.createElement("div");
+				div00.className = className00[q];
+				if (div00.className == className00[1]) {
 
-				for (let z = 1; z <= 3; z++) {
+					let div01 = document.createElement("div");
+					div01.className = "sub00";
 
-					let div03 = document.createElement("div");
-					let div04 = document.createElement("div");
+					for (let z = 1; z <= 3; z++) {
 
-					div04.id = "title0" + z;
-					div04.className = "sub01-titles";
-					div04.appendChild(document.createTextNode(titleNodes00[z-1]));
+						let div03 = document.createElement("div");
+						let div04 = document.createElement("div");
 
-					div03.id = "sect-sub0" + z;
-					div03.className = "sub01";
-					div03.appendChild(div04);
+						div04.id = "title0" + z + l;
+						div04.className = "sub01-titles";
+						div04.appendChild(document.createTextNode(titleNodes00[z-1]));
 
-					div03.addEventListener("mouseover", (event) => {
+						div03.id = "sect-sub0" + z + l;
+						div03.className = "sub01";
+						div03.appendChild(div04);
 
-						event.target.classList.add("reaction00");
-						if (event.target.id != event.target.parentNode.lastChild.id) {
-							event.target.parentNode.lastChild.style.borderBottomColor = "black";
-							event.target.parentNode.lastChild.style.zIndex = "0";
-						}
-						if (event.target.id == event.target.parentNode.firstChild.id) {
-							event.target.parentNode.lastChild.style.zIndex = "-1";
-						}
-					});
-					div03.addEventListener("mouseout", (event) => {
+						div03.addEventListener("mouseover", (event) => {
 
-						event.target.classList.remove("reaction00");
-						event.target.parentNode.lastChild.style.borderBottomColor = "white";
-						event.target.parentNode.lastChild.style.zIndex = "initial";
-					});
-					div01.appendChild(div03);
+							event.target.classList.add("reaction00");
+							if (event.target.id != event.target.parentNode.lastChild.id) {
+								event.target.parentNode.lastChild.style.borderBottomColor = "black";
+								event.target.parentNode.lastChild.style.zIndex = "0";
+							}
+							if (event.target.id == event.target.parentNode.firstChild.id) {
+								event.target.parentNode.lastChild.style.zIndex = "-1";
+							}
+						});
+						div03.addEventListener("mouseout", (event) => {
+
+							event.target.classList.remove("reaction00");
+							event.target.parentNode.lastChild.style.borderBottomColor = "white";
+							event.target.parentNode.lastChild.style.zIndex = "initial";
+						});
+						div01.appendChild(div03);
+					}
+					div00.appendChild(div01);
 				}
-				div00.appendChild(div01);
+				if (div00.className == className00[3] || div00.className == className00[4]) {
+					
+					let div05 = document.createElement("div");
+					let iframe00 = document.createElement("iframe");
+
+					div05.className = "navi-all";
+					iframe00.className = "navi-all-img";
+					iframe00.src = "img/RollButons.svg";
+					iframe00.scrolling = "no";
+
+					div05.appendChild(iframe00);
+					div00.appendChild(div05);
+				}
+				if (div00.className == className00[2]) {
+
+					let image_new = document.createElement("img");
+					image_new.className = miniatures00.children[0].className;
+					image_new.src = miniatures00.children[0].src;
+
+					div00.appendChild(image_new);
+				}
+				parent01.appendChild(div00);
 			}
-			if (div00.className == className00[3] || div00.className == className00[4]) {
-				
-				let div05 = document.createElement("div");
-				let iframe00 = document.createElement("iframe");
 
-				div05.className = "navi-all";
-				iframe00.className = "navi-all-img";
-				iframe00.src = "img/RollButons.svg";
-				iframe00.scrolling = "no";
-
-				div05.appendChild(iframe00);
-				div00.appendChild(div05);
-			}
-			if (div00.className == className00[2]) {
-
-				let image_new = document.createElement("img");
-				image_new.className = miniatures00.children[0].className;
-				image_new.src = miniatures00.children[0].src;
-
-				div00.appendChild(image_new);
-			}
-			parent01.appendChild(div00);
+			prosecutor00.appendChild(parent01);
 		}
 
 		// The order matters.
-		parent00[0].replaceChild(parent01, parent00[0].children[0]);
-		parent01.children[0].style.width = parent01.children[2].firstChild.width + "px";
-		parent01.children[0].style.height = parent01.children[2].firstChild.height + "px";
-		parent01.children[1].firstChild.style.width = parent01.children[2].firstChild.width + "px";
-		parent01.children[2].firstChild.style.width = parent01.children[2].firstChild.clientWidth + "px";
+		parent00[0].replaceChild(prosecutor00, parent00[0].children[0]);
+		for (let t = 0, o = prosecutor00.children.length; t < o; t++) {
+
+			prosecutor00.children[t].children[0].style.width = prosecutor00.children[t].children[2].firstChild.width + "px";
+			prosecutor00.children[t].children[0].style.height = prosecutor00.children[t].children[2].firstChild.height + "px";
+
+			prosecutor00.children[t].children[1].firstChild.style.width = prosecutor00.children[t].children[2].firstChild.width + "px";
+			prosecutor00.children[t].children[2].firstChild.style.width = prosecutor00.children[t].children[2].firstChild.clientWidth + "px";
+		}
 
 		//Adding a chain art element to the openbox element.
-		className00 = ["leftsection00", "rightsection00", "chain-all", "long-chain-img", "chain-img-up", "chain-img-down"];
+		let className00 = ["leftsection00", "rightsection00", "chain-all", "long-chain-img", "chain-img-up", "chain-img-down"];
 
 		for (let v = 0; v <= 1; v++) {
 
@@ -613,7 +628,111 @@ function GlobalAnimations() {
 			}
 			parent00[0].insertBefore(div00, parent00[0].lastChild);
 		}
+		BlockSlide00();
 	}
+
+	// function BlockSlide00 run from function InsideBox0A
+	function BlockSlide00() {
+		let allInBox = document.querySelectorAll(".Inbox01");
+		document.querySelectorAll(".leftsection.leftsection00")[0].addEventListener("animationend", (event) => {
+
+			if (event.animationName == "left-navi-ani-00") {
+				let iframe00 = document.querySelectorAll(".navi-all-img");
+
+				for (let a = 0, b = iframe00.length; a < b; a++) {
+					iframe00[a].contentDocument.getElementById("RollButtonsUp").addEventListener("click", (event) => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAni00").beginElement();
+							iframe00[m].contentDocument.getElementById("ArrowsAni00").addEventListener("beginEvent", (event) => {
+								for (let z = 0; z < b; z++) {
+									iframe00[z].contentDocument.getElementById("RollButtonsUp").style.pointerEvents = "none";
+									iframe00[z].contentDocument.getElementById("RollButtonsDown").style.pointerEvents = "none";									
+								}
+								for (let f = 0, u = allInBox.length; f < u; f++) {
+									allInBox[f].classList.add("move-up");
+								}
+							});
+							iframe00[m].contentDocument.getElementById("LastAniUp").addEventListener("endEvent", (event) => {
+								for (let z = 0; z < b; z++) {
+									iframe00[z].contentDocument.getElementById("RollButtonsUp").style.pointerEvents = "all";
+									iframe00[z].contentDocument.getElementById("RollButtonsDown").style.pointerEvents = "all";									
+								}
+							});
+						}
+					});
+					iframe00[a].contentDocument.getElementById("RollButtonsUp").addEventListener("mouseenter", () => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAniAIn").beginElement();
+						}
+					});
+					iframe00[a].contentDocument.getElementById("RollButtonsUp").addEventListener("mouseleave", () => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAniAOut").beginElement();
+						}
+					});
+					iframe00[a].contentDocument.getElementById("RollButtonsDown").addEventListener("click", (event) => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAni01").beginElement();
+							iframe00[m].contentDocument.getElementById("ArrowsAni01").addEventListener("beginEvent", (event) => {
+								for (let z = 0; z < b; z++) {
+									iframe00[z].contentDocument.getElementById("RollButtonsUp").style.pointerEvents = "none";
+									iframe00[z].contentDocument.getElementById("RollButtonsDown").style.pointerEvents = "none";
+								}
+								for (let f = 0, u = allInBox.length; f < u; f++) {
+									allInBox[f].classList.add("move-down");
+								}
+							});
+							iframe00[m].contentDocument.getElementById("LastAniDown").addEventListener("endEvent", (event) => {
+								for (let z = 0; z < b; z++) {
+									iframe00[z].contentDocument.getElementById("RollButtonsUp").style.pointerEvents = "all";
+									iframe00[z].contentDocument.getElementById("RollButtonsDown").style.pointerEvents = "all";
+								}
+							});
+						}
+					});
+					iframe00[a].contentDocument.getElementById("RollButtonsDown").addEventListener("mouseenter", () => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAniBIn").beginElement();
+						}
+					});
+					iframe00[a].contentDocument.getElementById("RollButtonsDown").addEventListener("mouseleave", () => {
+						for (let m = 0; m < b; m++) {
+							iframe00[m].contentDocument.getElementById("ArrowsAniBOut").beginElement();
+						}
+					});
+				}
+			}
+		});
+
+		let slave_masters = document.querySelectorAll(".leftsection00,.rightsection00");
+		document.getElementsByClassName("Inbox01")[0].addEventListener("animationstart", (event) =>{
+
+			if (event.target.className == "Inbox01 move-up") {
+				for (let p = 0, s = slave_masters.length; p < s; p++) {
+					slave_masters[p].firstChild.className = "chain-all move-up";
+					slave_masters[p].lastChild.className = "chain-all move-down";
+				}
+			}
+			if (event.target.className == "Inbox01 move-down") {
+				for (let p = 0, s = slave_masters.length; p < s; p++) {
+					slave_masters[p].firstChild.className = "chain-all move-down";
+					slave_masters[p].lastChild.className = "chain-all move-up";
+				}
+			}
+
+		});
+		document.getElementsByClassName("Inbox01")[0].addEventListener("animationend", (event) =>{
+			for (let f = 0, u = allInBox.length; f < u; f++) {
+				allInBox[f].className = "Inbox01";
+			}
+			for (let p = 0, s = slave_masters.length; p < s; p++) {
+				slave_masters[p].firstChild.className = "chain-all";
+				slave_masters[p].lastChild.className = "chain-all";
+			}
+
+		});
+	}
+
 
 
 	if ("ontouchstart" in document.documentElement) {

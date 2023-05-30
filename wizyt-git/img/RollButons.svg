@@ -9,18 +9,19 @@
     <defs>
         <g id="RollButtonAni00">
             <g id="ArrowsAni">
-                <set href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsUp.mouseenter" fill="freeze" />
-                <set href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsUp.mouseleave" fill="freeze" />
+                <set id="ArrowsAniAIn" href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsUp.mouseenter" fill="freeze" />
+                <set id="ArrowsAniAOut" href="#ArrowA" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsUp.mouseleave" fill="freeze" />
 
-                <set href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsDown.mouseenter" fill="freeze" />
-                <set href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsDown.mouseleave" fill="freeze" />
+                <set id="ArrowsAniBIn" href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="RollButtonsDown.mouseenter" fill="freeze" />
+                <set id="ArrowsAniBOut" href="#ArrowB" dur="1.5s" atributeType="XML" attributeName="fill" from="#1cff1c" to="#008000" begin="RollButtonsDown.mouseleave" fill="freeze" />
 
                 <set id="ArrowsAni00" href="#ArrowA" dur="0.1s" atributeType="XML" attributeName="fill" to="#008000" begin="RollButtonsUp.click" fill="freeze" />
                 <set id="ArrowsAni0A" href="#Arrow0A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="
                     ArrowsAni00.end;
                     ArrowsAni00.end+0.75s;
                     ArrowsAni00.end+1.5s;
-                    ArrowsAni00.end+2.25s" />
+                    ArrowsAni00.end+2.25s;
+                    ArrowsAni00.end+3s;" />
                 <set id="ArrowsAni1A" href="#Arrow1A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni0A.end" />
                 <set id="ArrowsAni2A" href="#Arrow2A" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni1A.end" />
 
@@ -29,13 +30,14 @@
                     ArrowsAni01.end;
                     ArrowsAni01.end+0.75s;
                     ArrowsAni01.end+1.5s;
-                    ArrowsAni01.end+2.25s" />
+                    ArrowsAni01.end+2.25s;
+                    ArrowsAni01.end+3s" />
                 <set id="ArrowsAni1B" href="#Arrow1B" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni0B.end" />
                 <set id="ArrowsAni2B" href="#Arrow2B" dur="0.25s" atributeType="XML" attributeName="fill" from="#008000" to="#1cff1c" begin="ArrowsAni1B.end" />
             </g>
             <g id="BaseArrowAni">
-                <animateTransform href="#RollButtonsUp" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni00.end" dur="2.25s" />
-                <animateTransform href="#RollButtonsDown" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni01.end" dur="2.25s" />
+                <animateTransform id="LastAniUp" href="#RollButtonsUp" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni00.end" dur="3s" />
+                <animateTransform id="LastAniDown" href="#RollButtonsDown" atributeType="XML" attributeName="transform" type="scale" values="1;0.9;1" begin="ArrowsAni01.end" dur="3s" />
                 
             </g>
         </g>
@@ -45,7 +47,7 @@
         <path id="RollButonBase" d="m16.585 6.2664c5.7167 0 10.319 4.6824 10.319 10.499v44.619c0 5.8163-4.6021 10.499-10.319 10.499s-10.319-4.6823-10.319-10.499v-44.619c0-5.8163 4.6022-10.499 10.319-10.499z" fill="#611800" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".52917" style="paint-order:fill markers stroke"/>
         <g class="RollArrows" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".52917">
             <path id="BaseArrowB1" d="m12.22 42.25h9.2604v19.844s-1.9388 6.6146-4.6302 6.6146c-2.6913 0-4.6302-6.6146-4.6302-6.6146z" fill="#000000" style="paint-order:fill markers stroke"/>
-            <g id="RollButtonsDown" style="transform-origin: center; transform-box: fill-box;">
+            <g id="RollButtonsDown" style="transform-origin: center; transform-box: fill-box; cursor:pointer;">
                 <path id="BaseArrowB" d="m12.22 42.25h9.2604v19.844s-1.9388 6.6146-4.6302 6.6146c-2.6913 0-4.6302-6.6146-4.6302-6.6146z" fill="#ff7f2a" style="paint-order:fill markers stroke"/>
                 <g id="ArrowB" fill="#008000">
                     <path id="Arrow2B" d="m20.286 58.217v3.7066l-3.4359 4.942-3.4357-4.942v-3.7066l3.4357 4.49z" style="paint-order:fill markers stroke"/>
@@ -54,7 +56,7 @@
                 </g>
             </g>
             <path id="BaseArrowA1" d="m12.22 36.429h9.2604v-19.844s-1.9388-6.6147-4.6302-6.6147c-2.6913 0-4.6302 6.6147-4.6302 6.6147z" fill="#000000" style="paint-order:fill markers stroke"/>
-            <g id="RollButtonsUp" style="transform-origin: center; transform-box: fill-box;">
+            <g id="RollButtonsUp" style="transform-origin: center; transform-box: fill-box;cursor:pointer;">
                 <path id="BaseArrowA" d="m12.22 36.429h9.2604v-19.844s-1.9388-6.6147-4.6302-6.6147c-2.6913 0-4.6302 6.6147-4.6302 6.6147z" fill="#ff7f2a" style="paint-order:fill markers stroke"/>
                 <g id="ArrowA" fill="#008000">
                     <path id="Arrow2A" d="m20.286 20.462v-3.7066l-3.4359-4.9421-3.4357 4.9421v3.7066l3.4357-4.49z" style="paint-order:fill markers stroke"/>

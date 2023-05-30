@@ -37,6 +37,7 @@ body > div {
 	display: block;
 }
 
+/* After flipping, before clicking */
 .letmein {
 	position: absolute;
 	display: flex;
@@ -46,18 +47,27 @@ body > div {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: black;
+	background-image: url("../img/wall-0.svg");
+	background-size: 35%;
+	border: 15px solid transparent;
+	border-image: url(../img/frame.png) 2% round;
 }
 .letmein.letmeout {
 	display: none;
 }
+.buttonBG {
+	width: 90%;
+	height: 95%;
+	position: absolute;
+	background-image: url("../img/button-wood-v2-Hor-ani.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
 .StartButton {
-	background: white;
-	width: 80%;
-	height: 20%;
-	font-family: "Comic sans MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 25px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 
@@ -433,11 +443,11 @@ body > div {
 }
 
 #roll-tape-A {
-	left: -25px;
+	left: -5px;
 }
 
 #roll-tape-B {
-	left: 18px;
+	left: -2px;
 }
 
 .tapes {
@@ -495,6 +505,7 @@ body > div {
 	justify-content: center;
 	width: 100%;
 	border: 15px solid transparent;
+	overflow: hidden;
 	animation: open-box-ani-03 4s 8s forwards;
 }
 @keyframes open-box-ani-03 {
@@ -588,6 +599,12 @@ body > div {
 
 
 /* after opening Box */
+.prosecutor00 {
+	position: relative;
+	width: 100%; 
+	height: 100%;
+	background-image: url("../img/wall-0.svg");
+}
 .Inbox01 {
 	position: relative;
 	display: flex;
@@ -595,7 +612,19 @@ body > div {
 	align-self: center;
 	width: 100%; 
 	height: 100%; 
-	background-image: url("../img/wall-0.svg");
+	transform: translate(0, -100%);
+}
+.Inbox01.move-up {
+	animation: box-up-ani-00 3s forwards;
+}
+@keyframes box-up-ani-00 {
+	100% {transform: translate(0, -200%);}
+}
+.Inbox01.move-down {
+	animation: box-down-ani-00 3s forwards;
+}
+@keyframes box-down-ani-00 {
+	100% {transform: translate(0, 0);}
 }
 
 .miniatures03 {
@@ -632,7 +661,11 @@ body > div {
 	position: absolute;
 	width: 15%;
 	height: 100%;
-	left: 40px;
+	left: -200px;
+	animation: left-navi-ani-00 3s forwards;
+}
+@keyframes left-navi-ani-00 {
+	100% {left: 40px;}
 }
 .rightsection {
 	display: flex;
@@ -641,7 +674,11 @@ body > div {
 	position: absolute;
 	width: 15%;
 	height: 100%;
-	right: 40px;
+	right: -200px;
+	animation: right-navi-ani-00 3s forwards;
+}
+@keyframes right-navi-ani-00 {
+	100% {right: 40px;}
 }
 
 .sub00 {
@@ -665,14 +702,14 @@ body > div {
 	border: 1px solid black;
 	bottom: 0;
 }
-#sect-sub01 {
+#sect-sub010, #sect-sub011, #sect-sub012 {
 	right: 0;
 }
-#sect-sub02 {
+#sect-sub020, #sect-sub021, #sect-sub022 {
 	left: 50%;
 	transform: translate(-50%);
 }
-#sect-sub03 {
+#sect-sub030, #sect-sub031, #sect-sub032 {
 	left: 0;
 	border-bottom-color: white;
 }
@@ -702,6 +739,20 @@ body > div {
 	position: relative;
 	width: 52px;
 	height: 6300px;
+}
+.chain-all.move-up {
+	animation: chain-up-ani-00 3s forwards;
+}
+@keyframes chain-up-ani-00 {
+	0% {top: 0}
+	100% {top: -400px;}
+}
+.chain-all.move-down {
+	animation: chain-down-ani-00 3s forwards;
+}
+@keyframes chain-down-ani-00 {
+	0% {top: 0}
+	100% {top: 400px;}
 }
 .long-chain-img {
 	scale: 0.7;
