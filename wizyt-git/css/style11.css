@@ -454,7 +454,7 @@ body.hull-no-ani {
 	width: 100%;
 	border: 90px solid transparent;
 	overflow: hidden;
-	animation: open-box-ani-03 4s 8s forwards;
+	animation: open-box-ani-03 2s 4s forwards;
 }
 @keyframes open-box-ani-03 {
 	0% { border-image: url(../img/frame.png) 2% round; border-image-outset: 90px;}
@@ -465,7 +465,7 @@ body.hull-no-ani {
 	align-self: center;
 	width: 95%;
 	height: 75%;
-	animation: open-box-ani-01 4s 8s forwards;
+	animation: open-box-ani-01 2s 4s forwards;
 
 }
 @keyframes open-box-ani-01 {
@@ -494,22 +494,22 @@ body.hull-no-ani {
 .miniatures01.left00 {
 	transform: translate(300px,11px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures01.center00 {
 	transform: translate(1580px,11px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures01.right00 {
 	transform: translate(2860px,11px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02 {
@@ -519,22 +519,22 @@ body.hull-no-ani {
 .miniatures02.left00 {
 	transform: translate(184px,1016px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.center00 {
 	transform: translate(1460px,1016px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.right00 {
 	transform: translate(2740px,1016px);
 	animation-name: open-box-ani-00, open-box-ani-02;
-	animation-duration: 8s, 8s;
-	animation-delay: 0s, 8s;
+	animation-duration: 4s, 4s;
+	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 @keyframes open-box-ani-00 {
@@ -564,13 +564,13 @@ body.hull-no-ani {
 	transform: translate(0, -100%);
 }
 .Inbox01.move-up {
-	animation: box-up-ani-00 3s forwards;
+	animation: box-up-ani-00 4s forwards;
 }
 @keyframes box-up-ani-00 {
 	100% {transform: translate(0, -200%);}
 }
 .Inbox01.move-down {
-	animation: box-down-ani-00 3s forwards;
+	animation: box-down-ani-00 4s forwards;
 }
 @keyframes box-down-ani-00 {
 	100% {transform: translate(0, 0);}
@@ -611,7 +611,7 @@ body.hull-no-ani {
 	height: 100%;
 	left: -200px;
 	scale: 1.2;
-	animation: left-navi-ani-00 3s forwards;
+	animation: left-navi-ani-00 4s forwards;
 }
 @keyframes left-navi-ani-00 {
 	100% {left: 10px;}
@@ -625,7 +625,7 @@ body.hull-no-ani {
 	height: 100%;
 	right: -200px;
 	scale: 1.2;
-	animation: right-navi-ani-00 3s forwards;
+	animation: right-navi-ani-00 4s forwards;
 }
 @keyframes right-navi-ani-00 {
 	100% {right: 10px;}
@@ -651,17 +651,48 @@ body.hull-no-ani {
 	box-shadow: 0px 0px 30px 30px  #0000005c;
 	border: 6px solid black;
 	bottom: 0;
+	overflow: hidden;
 }
 #sect-sub010, #sect-sub011, #sect-sub012 {
-	right: 0;
+	left: 62%;
 }
 #sect-sub020, #sect-sub021, #sect-sub022 {
-	left: 50%;
-	transform: translate(-50%);
+	left: 31%;
 }
 #sect-sub030, #sect-sub031, #sect-sub032 {
 	left: 0;
 	border-bottom-color: white;
+}
+
+#sect-sub031 {
+	animation: sub31-ani-03 4s forwards;
+}
+@keyframes sub31-ani-03 {
+	0% {left: 0; bottom: -70%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	12.5% {left: 0; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	62.5% {left: 0; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	100% {left: 0; bottom: 0; border-radius: 50px 50px 0px 0px; width: 38%; height: 60%;}
+}
+#sect-sub021 {
+	animation: sub31-ani-02 4s forwards;
+}
+@keyframes sub31-ani-02 {
+	0% {left: 0; bottom: -70%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	12.5% {left: 0; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	25% {left: 31%; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	62.5% {left: 31%; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	100% {left: 31%; bottom: 0; border-radius: 50px 50px 0px 0px; width: 38%; height: 60%;}
+}
+#sect-sub011 {
+	animation: sub31-ani-01 4s forwards;
+}
+@keyframes sub31-ani-01 {
+	0% {left: 0; bottom: -70%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	12.5% {left: 0; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	25% {left: 31%; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	50% {left: 62%; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	62.5% {left: 62%; bottom: 0%; border-radius: 50px 50px 50px 50px; width: 6.5%; height: 60%;}
+	100% {left: 62%; bottom: 0; border-radius: 50px 50px 0px 0px; width: 38%; height: 60%;}
 }
 .sub01.reaction00 {
 	border-bottom-color: white;
@@ -672,6 +703,11 @@ body.hull-no-ani {
 	font-weight: bold;
 	font-size: 75px;
 	pointer-events: none;
+	transform: translate(0, 100px);
+	animation: titles-ani-00 5s 2s forwards;
+}
+@keyframes titles-ani-00 {
+	100% {transform: translate(0, 0);}
 }
 .navi-all {
 	position: relative;
@@ -692,14 +728,14 @@ body.hull-no-ani {
 	scale: 1.2;
 }
 .chain-all.move-up {
-	animation: chain-up-ani-00 3s forwards;
+	animation: chain-up-ani-00 4s forwards;
 }
 @keyframes chain-up-ani-00 {
 	0% {top: 0}
 	100% {top: -1080px;}
 }
 .chain-all.move-down {
-	animation: chain-down-ani-00 3s forwards;
+	animation: chain-down-ani-00 4s forwards;
 }
 @keyframes chain-down-ani-00 {
 	0% {top: 0}
