@@ -1,3 +1,3 @@
 # Faktoria
 
-Works fine on 720p HD TV set but not perfect. The project is not yet RWD.
+My website design. It contains a lot of animations in svg and css programming languages. The website should open correctly on most devices such as: smartphone, laptop, tablet, smartTV. The project is in the testing and preparation phase. Animations may stutter on weaker hardware.
