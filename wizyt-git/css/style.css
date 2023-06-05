@@ -1,7 +1,6 @@
 * {
 	box-sizing: border-box;
 }
-
 body {
 	background-color: #636363;
 	margin: 0;
@@ -17,35 +16,6 @@ body.hull-no-ani {
 	overflow-y: auto;
 }
 
-/* planksAB-banner.svg animations */
-#planksAB:hover #text-title-shadow {
-	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
-}
-.all-small-planks:hover .all-small-planks-text-shadows {
-	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
-}
-@keyframes text-an1-01 {
-	100% {opacity: 1;}
-}
-
-#side-center.side-center-ani {
-	animation: side-center-ani-00 5s forwards;
-}
-@keyframes side-center-ani-00 {
-	0% {top: -1220px; height: 1920px;}
-	99% {top: 0px; height: 1920px;}
-	100% {top: 0px; height: 1450px;}
-}
-
-#banner.banner-ani {
-	animation: banner-ani-00 5s forwards;
-}
-@keyframes banner-ani-00 {
-	0% {transform: translate(-51%,0px);}
-	50% {transform: translate(-51%,30px);}
-	100% {transform: translate(-51%, 0px);}
-}
-
 /* tape-A.svg animations */
 
 #plate-A-00-up-all.tape-A-ani-left {
@@ -58,7 +28,6 @@ body.hull-no-ani {
 	0% {transform: translate(0px, 0px);}
 	100% {transform: translate(-433.2px, 0px);} /* 407.2px */
 }
-
 #plate-A-00-down-all.tape-A-ani-left {
 	animation: tape-A-left-ani-01 15s none;
 }
@@ -69,7 +38,6 @@ body.hull-no-ani {
 	0% {transform: translate(0px, 0px);}
 	100% {transform: translate(433.2px, 0px);} /* 430.8px */
 }
-
 .all-no-ani-buttons.tape-A-ani-left {
 	animation: tape-A-left-ani-02 15s none;
 }
@@ -79,15 +47,6 @@ body.hull-no-ani {
 @keyframes tape-A-left-ani-02 {
 	0% {transform: rotate(0deg); transform-box: fill-box; transform-origin: 50% 50%;}
 	100% {transform: rotate(-720deg); transform-box: fill-box; transform-origin: 50% 50%;}
-}
-
-#all-lines.all-lines-ani {
-	animation: all-lines-ani-00 5s forwards;
-}
-@keyframes all-lines-ani-00 {
-	0% {bottom: 750px;}
-	99% {bottom: 750px;}
-	100% {bottom: 280px;}
 }
 
 /* tape-A.svg animations buttons */
@@ -109,7 +68,6 @@ body.hull-no-ani {
 	50% {transform: translate(-1px,-1px);}
 	100% {transform: translate(0px, 0px);}
 }
-
 .tape-A-00-buttons {
 	cursor: pointer;
 }
@@ -123,15 +81,6 @@ body.hull-no-ani {
 	100% {transform: translate(0, 850px);}
 }
 
-
-.all-gutters-down.all-gutters-down-ani {
-	animation: all-gutters-down-ani-00 5s forwards;
-}
-@keyframes all-gutters-down-ani-00 {
-	100% {top: 935px}
-}
-
-
 /* index.html */
 
 #side-top {
@@ -140,29 +89,40 @@ body.hull-no-ani {
 	margin-left: 50%;
 	transform: translate(-50%, 0);
 }
-
 #side-banner {
 	position: relative;
 }
-
 #banner {
 	width: 1402.52px;
 	height: 420px;
 	margin-left: 50%;
 	transform: translate(-51%, 0);
 }
-
+#banner.banner-ani {
+	animation: banner-ani-00 5s forwards;
+}
+@keyframes banner-ani-00 {
+	0% {transform: translate(-51%,0px);}
+	50% {transform: translate(-51%,30px);}
+	100% {transform: translate(-51%, 0px);}
+}
 #planksAB-banner {
 	position: relative;
 	transform-origin: 0 0;
 	transform: translate(0, -290px) scale(0.97);
-
 }
-
+#planksAB:hover #text-title-shadow {
+	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
+}
 .all-small-planks {
 	cursor: pointer;
 }
-
+.all-small-planks:hover .all-small-planks-text-shadows {
+	animation: text-an1-01 2s forwards; /* forwards probably crashes the animation */
+}
+@keyframes text-an1-01 {
+	100% {opacity: 1;}
+}
 #side-center {
 	background-image: url("../img/wall-0.svg");
 	position: absolute;
@@ -171,100 +131,60 @@ body.hull-no-ani {
 	overflow: hidden;
 	top: -1220px; /* -165% */
 }
-
+#side-center.side-center-ani {
+	animation: side-center-ani-00 5s forwards;
+}
+@keyframes side-center-ani-00 {
+	0% {top: -1220px; height: 1920px;}
+	99% {top: 0px; height: 1920px;}
+	100% {top: 0px; height: 1450px;}
+}
 #trough-left {
 	position: absolute;
 	left: 0.6%;
-	top: -45px;
+	top: -40px;
 }
-
 #trough-right {
 	position: absolute;
 	right: 0.6%;
-	top: -45px;
+	top: -40px;
 }
-
 .contact-group {
 	cursor: pointer;
 	pointer-events: all;
 }
-
 #all-lines {
 	position: absolute;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
-	bottom: 750px;
+	bottom: 790px;
 }
-
+#all-lines.all-lines-ani {
+	animation: all-lines-ani-00 5s forwards;
+}
+@keyframes all-lines-ani-00 {
+	0% {bottom: 790px;}
+	99% {bottom: 790px;}
+	100% {bottom: 320px;}
+}
 .lines {
 	position: relative;
-	height: 455px;
+	height: 415px;
 }
-
 #AllBoxes {
 	position: absolute;
 	display: flex;
 	justify-content: space-around;
 	top: 430px;
 	left: 0;
-	width: 100%; /* 1518px == 100% */
+	width: 100%;
 }
-
 .slides {
 	position: absolute;
 	display: flex;
 	justify-content: space-around;
-	width: 100%; /* 1225px */
+	width: 100%;
 	transform: translate(100%, 0);
-}
-.one-of-three {
-	display: flex;
-	justify-content: space-around;
-}
-.Boxes {
-	position: absolute;
-}
-
-#Tab00Category:hover  {
-	fill: white;
-	cursor: pointer;
-}
-#Tab01Descrip:hover {
-	fill: white;
-	cursor: pointer;
-}
-#Tab02Code:hover {
-	fill: white;
-	cursor: pointer;
-}
-#Tab00Category:hover ~ g .flip00 {
-	pointer-events: none;
-	cursor: pointer;
-}
-#Tab01Descrip:hover ~ g .flip00 {
-	pointer-events: none;
-	cursor: pointer;
-}
-#Tab02Code:hover ~ g .flip00 {
-	pointer-events: none;
-	cursor: pointer;
-}
-.textboxes00,.flip00 {
-	pointer-events: none;
-}
-.miniatures00 {
-	position: absolute;
-	background-color: white;
-	cursor: pointer;
-	width: 266px;	/* 266px */
-	height: 120px; /* 120px */
-	transform: translate(25px, 75px); /* (25px, 75px) */
-}
-.slides-images-00 {
-	height: 100%;
-	margin-left: 50%;
-	transform: translate(-50%, 0);
-
 }
 
 /* boxes animations */
@@ -301,31 +221,80 @@ body.hull-no-ani {
 	animation: boxes-ani-R02 15s reverse forwards;
 }
 @keyframes boxes-ani-R02 {
-	0% {transform: translate(-100%, 455px);}
-	100% {transform: translate(0%, 455px);}
+	0% {transform: translate(-100%, 415px);}
+	100% {transform: translate(0%, 415px);}
 }
 .slides.slides-left.slide02 {
 	animation: boxes-ani-L02 15s forwards;
 }
 @keyframes boxes-ani-L02 {
-	0% {transform: translate(-100%, 455px);}
-	100% {transform: translate(0%, 455px);}
+	0% {transform: translate(-100%, 415px);}
+	100% {transform: translate(0%, 415px);}
 }
 .slides.slides-right.slide03 {
 	animation: boxes-ani-R03 15s reverse forwards;
 }
 @keyframes boxes-ani-R03 {
-	0% {transform: translate(0%, 455px);}
-	100% {transform: translate(100%, 455px);}
+	0% {transform: translate(0%, 415px);}
+	100% {transform: translate(100%, 415px);}
 }
 .slides.slides-left.slide03 {
 	animation: boxes-ani-L03 15s forwards;
 }
 @keyframes boxes-ani-L03 {
-	0% {transform: translate(0%, 455px);}
-	100% {transform: translate(100%, 455px);}
+	0% {transform: translate(0%, 415px);}
+	100% {transform: translate(100%, 415px);}
 }
+.one-of-three {
+	display: flex;
+	justify-content: space-around;
+}
+.Boxes {
+	position: absolute;
+}
+#Tab00Category:hover  {
+	fill: white;
+	cursor: pointer;
+}
+#Tab01Descrip:hover {
+	fill: white;
+	cursor: pointer;
+}
+#Tab02Code:hover {
+	fill: white;
+	cursor: pointer;
+}
+#Tab00Category:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+#Tab01Descrip:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+#Tab02Code:hover ~ g .flip00 {
+	pointer-events: none;
+	cursor: pointer;
+}
+.textboxes00,.flip00 {
+	pointer-events: none;
+}
+.miniatures00 {
+	position: absolute;
+	background-color: white;
+	cursor: pointer;
+	width: 266px;
+	height: 120px;
+	transform: translate(25px, 75px);
+}
+.slides-images-00 {
+	height: 100%;
+	margin-left: 50%;
+	transform: translate(-50%, 0);
+}
+
 /* flipped items for classes slide02, slide03 */
+
 .slide02 .Boxes {
 	transform: scaleX(-1);
 }
@@ -356,73 +325,62 @@ body.hull-no-ani {
 .slide03 .miniatures00 {
 	transform: translate(-26px, 75px);
 }
-
-
 .grips {
 	position: absolute;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
 	bottom: 0;
 }
-
 .grips#grip-A {
 	top: 535px;
 	left: -30px;
 }
-
 .grips#grip-B {
-	top: 990px;
+	top: 950px;
 	left: 30px;
 }
-
 #roll-tape-A {
-	left: -30px; /* -30px */
+	left: -30px;
 }
-
 #roll-tape-B {
-	left: 20px;	 /* 20px */
+	left: 20px;
 }
-
 .tapes {
 	position: absolute;
 	margin-left: 50%;
 	transform: translate(-50%, 0);
 	bottom: 0;
 }
-
 #side-bottom {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
 }
-
 #street {
 	transform: translate(-50%, 0px) scale(0.98);
 	margin-left: 50%;
 }
-
 #gutter-down {
 	position: absolute;
 	width: 100%;
 }
-
-
 .all-gutters-down {
 	position: absolute;
 	top: 85px;
 }
-
+.all-gutters-down.all-gutters-down-ani {
+	animation: all-gutters-down-ani-00 5s forwards;
+}
+@keyframes all-gutters-down-ani-00 {
+	100% {top: 935px}
+}
 #gutter-down-left {
 	left: 1%;
 }
-
 #gutter-down-right {
 	transform: scaleX(-1);
 	right: 1%;
 }
-
-/* side-bottom */
-
 #AllMailBox  {
 	cursor: pointer;
 }
@@ -449,7 +407,6 @@ body.hull-no-ani {
 	width: 95%;
 	height: 75%;
 	animation: open-box-ani-01 2s 4s forwards;
-
 }
 @keyframes open-box-ani-01 {
 	0% {background-image: url("../img/wall-0.svg");}
@@ -468,11 +425,9 @@ body.hull-no-ani {
 	width: 100%;
 	border: none;
 }
-
 .miniatures01 {
 	display: block;
 	cursor: initial;
-
 }
 .miniatures01.left00 {
 	transform: translate(99px,-21.1px);
@@ -500,21 +455,21 @@ body.hull-no-ani {
 	cursor: initial;
 }
 .miniatures02.left00 {
-	transform: translate(48.1px,433.5px);
+	transform: translate(48.1px,398.5px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 4s, 4s;
 	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.center00 {
-	transform: translate(554.6px,433.5px);
+	transform: translate(554.6px,398.5px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 4s, 4s;
 	animation-delay: 0s, 4s;
 	animation-fill-mode: forwards, forwards;
 }
 .miniatures02.right00 {
-	transform: translate(1061.1px,433.5px);
+	transform: translate(1061.1px,398.5px);
 	animation-name: open-box-ani-00, open-box-ani-02;
 	animation-duration: 4s, 4s;
 	animation-delay: 0s, 4s;
@@ -527,14 +482,13 @@ body.hull-no-ani {
 	100% {width: 100%; height: 100%; padding-block: 80px; background-color: transparent;}
 }
 
-
 /* after opening Box */
+
 .prosecutor00 {
 	position: relative;
 	width: 100%; 
 	height: 100%;
 	background-image: url("../img/wall-0.svg");
-
 }
 .Inbox01 {
 	position: relative;
@@ -556,7 +510,6 @@ body.hull-no-ani {
 @keyframes box-down-ani-00 {
 	100% {transform: translate(0, 0);}
 }
-
 .miniatures03 {
 	position: relative;
 	height: 75%;
@@ -609,7 +562,6 @@ body.hull-no-ani {
 @keyframes right-navi-ani-00 {
 	100% {right: 40px;}
 }
-
 .sub00 {
 	display: flex;
 	flex-direction: row-reverse;
@@ -632,7 +584,6 @@ body.hull-no-ani {
 	width: 38%;
 	height: 70%;
 }
-
 #sect-sub010, #sect-sub011, #sect-sub012 {
 	left: 62%;
 }
@@ -643,15 +594,14 @@ body.hull-no-ani {
 	left: 0;
 	border-bottom-color: white;
 }
-
 #sect-sub031 {
-	animation: sub31-ani-03 4s forwards;
+	animation: sub31-ani-03 4s;
 }
 @keyframes sub31-ani-03 {
-	0% {left: 0; bottom: -70%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
-	12.5% {left: 0; bottom: 0%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
-	62.5% {left: 0; bottom: 0%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
-	100% {left: 0; bottom: 0; border-radius: 25px 25px 0px 0px; width: 38%; height: 70%;}
+	0% {left: 0; border-bottom-color: black; bottom: -70%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
+	12.5% {left: 0; border-bottom-color: black; bottom: 0%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
+	62.5% {left: 0; border-bottom-color: black; bottom: 0%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
+	100% {left: 0; border-bottom-color: white; bottom: 0; border-radius: 25px 25px 0px 0px; width: 38%; height: 70%;}
 }
 #sect-sub021 {
 	animation: sub31-ani-02 4s forwards;
@@ -674,7 +624,6 @@ body.hull-no-ani {
 	62.5% {left: 62%; bottom: 0%; border-radius: 25px 25px 25px 25px; width: 6.5%; height: 70%;}
 	100% {left: 62%; bottom: 0; border-radius: 25px 25px 0px 0px; width: 38%; height: 70%;}
 }
-
 .sub01.reaction00 {
 	border-bottom-color: white;
 	z-index: 3;
@@ -690,8 +639,6 @@ body.hull-no-ani {
 @keyframes titles-ani-00 {
 	100% {transform: translate(0, 0);}
 }
-
-
 .navi-all {
 	position: relative;
 	width: 128px;
@@ -702,7 +649,6 @@ body.hull-no-ani {
 	height: 100%;
 	border: none;
 }
-
 .chain-all {
 	position: relative;
 	width: 52px;
@@ -713,14 +659,14 @@ body.hull-no-ani {
 }
 @keyframes chain-up-ani-00 {
 	0% {top: 0}
-	100% {top: -400px;}
+	100% {top: -575px;}
 }
 .chain-all.move-down {
 	animation: chain-down-ani-00 4s forwards;
 }
 @keyframes chain-down-ani-00 {
 	0% {top: 0}
-	100% {top: 400px;}
+	100% {top: 575px;}
 }
 .long-chain-img {
 	position: relative;
